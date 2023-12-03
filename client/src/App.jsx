@@ -1,27 +1,40 @@
+import { 
+  createBrowserRouter, 
+  createRoutesFromElements, 
+  Route, 
+  RouterProvider 
+} from 'react-router-dom'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+// layouts and pages
+import RootLayout from './layouts/RootLayout.jsx'
+import Home from './pages/Home/Home.jsx'
+import Services from './pages/AboutUs/Services.jsx'
+import LoginSignup from './pages/Login/LoginSignup.jsx'
+import About from './pages/About/About.jsx'
+import Dashboard from './pages/Dashboard/Dashboard.jsx'
+import Account from './pages/Account/Account.jsx'
 
-// pages & components
-import Home from './pages/Home'
-import Navbar from './components/Navbar'
+
+
+// router and routes
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout  />}>
+      <Route index element={<Home />} />
+      <Route path="Services" element={<Services />} />
+      <Route path="Login/Signup" element={<LoginSignup />} />
+       <Route path="About" element={<About />} />
+       <Route path="Dashboard" element={<Dashboard />} />
+       <Route path="Account" element={<Account />}/>
+  
+    </Route>
+  )
+)
 
 function App() {
-
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <div className="pages">
-          <Routes>
-            <Route 
-              path="/" 
-              element={<Home />} 
-            />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </div>
-  );
+    <RouterProvider router={router} />
+  )
 }
 
-export default App;
+export default App

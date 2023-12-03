@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const serviceProviderRoutes = require("./routes/serviceProvider.js");
-const clientProfileRoutes = require("./routes/clientProfileProfile.js");
+const clientProfileRoutes = require("./routes/clientProfile.js");
 
 const app = express();
 
@@ -25,8 +25,8 @@ app.use((req, res, next) => {
 //It mounts the serviceProviderRoutes and clientProfileRoutes middleware handlers to the "/api/serviceProvider" and "/api/clientProfile" routes respectively
 //so that requests to those paths will pass through those handlers.
 
-app.use("/api/serviceProvider", serviceProviderRoutes);
-app.use("/api/clientProfile", clientProfileRoutes);
+app.use("/api/serviceProviders", serviceProviderRoutes);
+app.use("/api/clientProfiles", clientProfileRoutes);
 
 // Mongoose----------------------------------------------------------------
 
@@ -36,6 +36,7 @@ app.use("/api/clientProfile", clientProfileRoutes);
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
+    console.log('connected to database', process.env.MONGO_URI)
     app.listen(process.env.PORT, () => {
       console.log("listening for requests on port", process.env.PORT);
     });

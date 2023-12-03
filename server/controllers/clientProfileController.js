@@ -1,177 +1,156 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const ClientProfile = require('../models/clientProfileModel');
+const mongoose = require('mongoose');
 
-const clientProfileSchema = new Schema(
-  {
-    userId: {
-      type: String,
-      required: true,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    fullName: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      lowercase: true,
-      trim: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    phoneNumber: {
-      type: String,
-      required: true,
-    },
-    address: {
-      street: String,
-      city: String,
-      state: String,
-      zipCode: String,
-    },
+// GET ----------------------------------------------------------------
 
-    bio: String,
-    profilePicture: String,
-    website: String,
-    socialLinks: {
-      facebook: String,
-      twitter: String,
-      linkedin: String,
-      instagram: String,
-      youtube: String,
-      // Add other social links or platforms as needed
-    },
+const getClientProfiles = async (req, res) => {
+  try {
+    const clientProfiles = await ClientProfile.find({});
+    res.status(200).json(clientProfiles);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
-    reviews: [
-      {
-        userId: String, // User ID who gave the review
-        rating: Number, // Rating given by the user
-        comment: String, // Review comment
-        createdAt: { type: Date, default: Date.now }, // Timestamp of the review
-      },
-    ],
-    education: [
-      {
-        degree: String,
-        institution: String,
-        completedYear: Number,
-      },
-    ],
-    availability: [
-      {
-        dayOfWeek: Number, // 0: Sunday, 1: Monday, ..., 6: Saturday
-        startTime: String, // Format: 'HH:mm' (e.g., '09:00' for 9 AM)
-        endTime: String,
-      },
-      // Add more availability slots or days as needed
-    ],
+// GET :/ID ----------------------------------------------------------------
 
-    memberships: [
-      {
-        organization: String,
-        membershipId: String,
-        expirationDate: Date,
-      },
-      // Add more memberships or associations as needed
-    ],
+const getClientProfile = async (req, res) => {
+  const { id } = req.params;
 
-    // Payment details or methods accepted
-    paymentMethods: [String],
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: 'Invalid ID' });
+  }
 
-    // Flag to indicate if the instructor is currently available or not
-    isActive: {
-      type: Boolean,
-      default: true,
-    },
+  try {
+    const clientProfile = await ClientProfile.findById(id);
 
-    // Flag to indicate if the instructor's account is verified
-    isVerified: {
-      type: Boolean,
-      default: false,
-    },
+    if (!clientProfile) {
+      return res.status(404).json({ error: 'Client Profile not found' });
+    }
 
-    // Date when the instructor's account was verified
-    verifiedAt: Date,
+    res.status(200).json(clientProfile);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
-    // Other fields relevant to the instructor's profile
+// POST ----------------------------------------------------------------
+const postClientProfile = async (req, res) => {
+  const {
+    userId,
+    username,
+    fullName,
+    email,
+    password,
+    phoneNumber,
+    address: { street, city, state, zipCode }, // Destructuring nested address object
+    bio,
+    profilePicture,
+    socialLinks: { facebook, twitter, linkedin, instagram, youtube }, // Destructuring nested socialLinks object
+    languagesSpoken,
+    reviews, 
+    education, 
+    memberships, 
+    paymentMethods, 
+    isActive,
+    isVerified,
+    verifiedAt,
+    followers, 
+    following, 
+    savedPosts, 
+  } = req.body;
 
-    posts: [
-      {
-        postId: {
-          type: Schema.Types.ObjectId,
-          ref: "Post",
-        },
-        content: String,
-        likes: [
-          {
-            userId: {
-              type: Schema.Types.ObjectId,
-              ref: "User",
-            },
-          },
-        ],
-        comments: [
-          {
-            userId: {
-              type: Schema.Types.ObjectId,
-              ref: "User",
-            },
-            comment: String,
-            createdAt: { type: Date, default: Date.now },
-          },
-        ],
-        createdAt: { type: Date, default: Date.now },
-      },
-    ],
+  try {
+    const clientProfile = await ClientProfile.create({
+      userId,
+      username,
+      fullName,
+      email,
+      password,
+      phoneNumber,
+      address: { street, city, state, zipCode }, // Reconstructing nested address object
+      bio,
+      profilePicture,
+      socialLinks: { facebook, twitter, linkedin, instagram, youtube }, // Reconstructing nested socialLinks object
+      languagesSpoken,
+      reviews,
+      education,
+      memberships,
+      paymentMethods,
+      isActive,
+      isVerified,
+      verifiedAt,
+      followers,
+      following,
+      savedPosts,
+    });
 
-    followers: [
-      {
-        userId: {
-          type: Schema.Types.ObjectId,
-          ref: "User",
-        },
-      },
-    ],
+    res.status(200).json(clientProfile);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
-    following: [
-      {
-        userId: {
-          type: Schema.Types.ObjectId,
-          ref: "User",
-        },
-      },
-    ],
 
-    savedPosts: [
-      {
-        postId: {
-          type: Schema.Types.ObjectId,
-          ref: "Post",
-        },
-      },
-    ],
-    servicesBought: [
-      {
-        userId: {
-          type: Schema.Types.ObjectId,
-          ref: "User",
-        },
-        serviceName: String,
-        purchaseDate: { type: Date, default: Date.now },
-        // Add more fields related to the purchased service if needed
-      },
-    ],
-  },
-  { timestamps: true }
-);
+// DELETE :ID ----------------------------------------------------------------
 
-const clientProfile = mongoose.model("clientProfile", clientProfileSchema);
 
-module.exports = clientProfile;
+const deleteClientProfile = async (req, res) => {
+  const {id} = req.params
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'Invalid ID'})
+  
+  }
+
+  const clientProfile = await ClientProfile.findOneAndDelete({_id: id})
+
+  if (!clientProfile) {
+    return res.status(400).json({error: 'No such client profile'})
+  }
+
+  res.status(200).json(clientProfile)
+
+
+
+
+}
+
+
+
+// PATCH :ID ----------------------------------------------------------------
+
+
+const patchClientProfile = async (req, res) => {
+  const {id} = req.params
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'Invalid ID'})
+  
+  }
+
+  const clientProfile = await ClientProfile.findOneAndUpdate({_id: id}, {
+    ...req.body
+  })
+
+  if (!clientProfile) {
+    return res.status(400).json({error: 'No such client profile'})
+  }
+
+  res.status(200).json(clientProfile)
+
+
+
+
+
+}
+
+
+
+module.exports = {
+  getClientProfile,
+  getClientProfiles,
+  postClientProfile,
+  deleteClientProfile,
+  patchClientProfile,
+};
