@@ -23,6 +23,7 @@ import {
   FormHelperText,
   MenuItemOption,
   MenuOptionGroup,
+ 
   HStack,
   Heading,
   InputGroup,
@@ -33,10 +34,23 @@ import {
   Card,
   CardHeader,
   CardBody,
+  Highlight ,
   CardFooter,
+  AspectRatio,
   ButtonGroup,
   Center,
+   Stat,
+  StatLabel,
+  StatNumber,
+  StatHelpText,
+  StatArrow,
+  StatGroup,
 } from "@chakra-ui/react";
+
+
+
+import { PureComponent } from 'react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,LineChart, Line, Legend } from 'recharts';
 
 import "./Home.css";
 import {
@@ -46,12 +60,53 @@ import {
   UpDownIcon,
 } from "@chakra-ui/icons";
 import homeCollage from "../../assets/Images/New Car.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect,  } from "react";
 import Car3d from "../../assets/Images/3d car.png";
 import Workplace3D from "../../assets/Images/3d workplace.png";
 import Office3d from "../../assets/Images/Office 3d.png";
 import SeaNSun from "../../assets/Images/SeaNsun.png";
 export default function home() {
+
+
+
+  const data = [
+    {
+      name: "2016",
+      UserGrowth: 1100670,
+    },
+    {
+      name: "2017",
+      UserGrowth: "2295670",
+    },
+    {
+      name: "2018",
+      UserGrowth: 2549670,
+    },
+    {
+      name: "2019",
+      UserGrowth: 2340670,
+    },
+    {
+      name: "2020",
+      UserGrowth: 3605670,
+    },
+    {
+      name: "2021",
+      UserGrowth: 4005670,
+    },
+    {
+      name: "2022",
+      UserGrowth: 3505670,
+    },
+    {
+      name: "2023",
+      UserGrowth: 5345670, // Update this value with the new count
+    },
+  ];
+  
+
+
+
   const [selectedValueAsset, setSelectedValueAsset] = useState("Suburb");
   const [inputValue, setInputValue] = useState("");
 
@@ -134,6 +189,15 @@ export default function home() {
     return () => clearTimeout(timeout);
   }, [refreshKey]);
 
+
+
+
+
+
+
+
+
+
   return (
     <>
       <Box
@@ -165,6 +229,8 @@ export default function home() {
         w={"95%"}
         borderRadius={"20px"}
         p={"2% 10%"}
+       
+
       >
         <HStack justify={"center"}>
           <Text
@@ -241,9 +307,8 @@ export default function home() {
                 xxl: "800px",
                 xxxl: "800px",
               }}
-              zIndex={"2"}
             >
-              <Input
+              <Input 
                 boxShadow={"0 0 10px 1px teal"}
                 transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
                 _hover={{
@@ -280,96 +345,7 @@ export default function home() {
                 borderColor={"#4FD1C5"}
               />
 
-              <Menu closeOnSelect={false}>
-                <MenuButton
-                  boxShadow={"0 0 10px 1px #3182CE"}
-                  transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
-                  _hover={{
-                    transform: "scale(1.03)",
-                    boxShadow: "0 0 20px 1px #3182CE",
-                  }}
-                  Wrap={true}
-                  ml={{
-                    base: "5px",
-                    xsm: "5px",
-                    ssm: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "10px",
-                    xl: "10px",
-                    xxl: "10px",
-                    xxxl: "10px",
-                  }}
-                  h={{
-                    base: "40px",
-                    xsm: "40px",
-                    ssm: "40px",
-                    sm: "40px",
-                    md: "40px",
-                    lg: "40px",
-                    xl: "50px",
-                    xxl: "50px",
-                    xxxl: "50px",
-                  }}
-                  as={Button}
-                  colorScheme="blue"
-                  w={{
-                    base: "150px",
-                    xsm: "100px",
-                    ssm: "165px",
-                    sm: "165px",
-                    md: "165px",
-                    lg: "165px",
-                    xl: "165px",
-                    xxl: "165px",
-                    xxxl: "165px",
-                  }}
-                  fontSize={{
-                    base: "11px",
-                    xsm: "10px",
-                    ssm: "15px",
-                    sm: "15px",
-                    md: "15px",
-                    lg: "15px",
-                    xl: "20px",
-                    xxl: "20px",
-                    xxxl: "20px",
-                  }}
-                >
-                  {selectedValueAsset} <ChevronDownIcon />
-                </MenuButton>
-
-                <MenuList
-                  color={"white"}
-                  minWidth="220px"
-                  border={"none"}
-                  bg={"blue.600"}
-                >
-                  <MenuOptionGroup
-                    title=""
-                    type="radio"
-                    value={selectedValueAsset}
-                    onChange={handleSelectAssest}
-                    bg={"blue.600"}
-                  >
-                    <MenuItemOption value="Salisbury" bg={"blue.600"}>
-                      Salisbury
-                    </MenuItemOption>
-                    <MenuItemOption value="Elizabeth" bg={"blue.600"}>
-                      Elizabeth
-                    </MenuItemOption>
-                    <MenuItemOption value="Brighton" bg={"blue.600"}>
-                      Brighton
-                    </MenuItemOption>
-                    <MenuItemOption value="Norwood" bg={"blue.600"}>
-                      Norwood
-                    </MenuItemOption>
-                    <MenuItemOption value="Glenelg" bg={"blue.600"}>
-                      Glenelg
-                    </MenuItemOption>
-                  </MenuOptionGroup>
-                </MenuList>
-              </Menu>
+              
               <Button
                 boxShadow={"0 0 10px 1px teal"}
                 transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
@@ -399,12 +375,14 @@ export default function home() {
         </span>
 
         <HStack
+      
           justify={"center"}
           mt={"2%"}
           mb={"5%"}
           transition="transform, 0.3s ease-in-out"
         >
-          <ButtonGroup transition="transform, 0.3s ease-in-out">
+          <ButtonGroup
+             transition="transform, 0.3s ease-in-out">
             <Text
               fontSize={"30px"}
               fontWeight={"700"}
@@ -413,11 +391,14 @@ export default function home() {
             ></Text>
 
             <Wrap
+              
               onClick={(event) =>
                 handleInput(event, setInputValue(event.target.value))
               }
             >
               <Button
+              
+              
                 value={"Performance Tuning/Racing Services"}
                 transition="transform, 0.3s ease-in-out"
                 p={{
@@ -472,6 +453,7 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
+               
               >
                 Rental
               </Button>
@@ -501,6 +483,7 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
+               
               >
                 Instruction/Training
               </Button>
@@ -531,6 +514,7 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
+               
               >
                 Vehicle Restoration
               </Button>
@@ -560,6 +544,7 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
+               
               >
                 Parts/Accessories Sales
               </Button>
@@ -589,6 +574,7 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
+             
               >
                 Detailing /Cleaning
               </Button>
@@ -640,9 +626,9 @@ export default function home() {
               sm: "60%",
               md: "60%",
               lg: "50%",
-              xl: "120%",
-              xxl: "120%",
-              xxxl: "120%",
+              xl: "110%",
+              xxl: "110%",
+              xxxl: "110%",
             }}
             backgroundPosition={{
               base: "top",
@@ -738,9 +724,9 @@ export default function home() {
               sm: "60%",
               md: "60%",
               lg: "50%",
-              xl: "120%",
-              xxl: "120%",
-              xxxl: "120%",
+              xl: "110%",
+              xxl: "110%",
+              xxxl: "110%",
             }}
             backgroundPosition={{
               base: "top",
@@ -808,12 +794,21 @@ export default function home() {
                 }}
               >
                 <Text
+               
                   fontWeight={"bold"}
                   transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
                   _hover={{ transform: "scale(1.1)" }}
+  
+              
+             
+              
+                 
+             
                 >
                   Become a Provider. <i class="gg-arrow-long-right"></i>
                 </Text>
+
+                
               </GridItem>
             </Grid>
           </Box>
@@ -919,7 +914,7 @@ export default function home() {
         </span>
       </HStack>
       <Center>
-        <Divider w={"50%"} mt={"5%"} />
+        <Divider borderWidth={"1.5px"} w={"90%"} mt={"5%"} />
       </Center>
 
       <HStack justify={"center"} transition="transform, 0.3s ease-in-out">
@@ -1644,12 +1639,12 @@ export default function home() {
         }}
         mb={"1%"}
       >
-        <Divider />
+         <Divider borderWidth={"1.5px"} w={"90%"} />
         <HStack
           fontFamily={"Raleway"}
           fontSize={{ base: "25px", xsm: "25px", ssm: "35px", sm: "40px" }}
           fontWeight={"bold"}
-          bg="white"
+          color={"balck"}
           px="4"
         >
           <Text>Providers</Text>
@@ -2459,15 +2454,16 @@ export default function home() {
         </ul>
       </div>
       <Box position="relative" padding="10">
-        <Divider />
+      <Divider borderWidth={"1.5px"}  w={"90%"} />
         <HStack
           fontFamily={"Raleway"}
           fontSize={{ base: "25px", xsm: "25px", ssm: "35px", sm: "40px" }}
           fontWeight={"bold"}
-          bg="white"
+          color={"balck"}
+         
           px="4"
         >
-          <Text>Users</Text>
+          <Text>Customers</Text>
         </HStack>
       </Box>
       <div class="marquee marquee--hover-pause">
@@ -3274,7 +3270,112 @@ export default function home() {
         </ul>
       </div>
 
-      <HStack></HStack>
+      <Center>
+        <Divider borderWidth={"1.5px"} w={"90%"} mt={"5%"} />
+      </Center>
+ 
+      <HStack justify={"center"} mt={"2%"} >
+
+    
+
+      <AspectRatio  w={{ base: "100%",
+          xsm: "90%",
+          ssm: "90%",
+          sm: "90%",
+          md: "90%",
+          lg: "90%",
+          xl: "90%  ",
+          xxl: "90%",}}
+          
+          
+          h={{ base: "300px",
+          xsm: "300px",
+          ssm: "400px",
+          sm: "500px",
+          md: "600px",
+          lg: "600px",
+          xl: "600px",
+          xxl: "600px",}}>
+<iframe  style={{borderRadius:"20px"}} width={"100%"}  height={"100%"} src="https://www.youtube.com/embed/NPwRWzpSxKU?si=EGE2YvVQ49Ql9e6K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+</AspectRatio>
+
+
+        
+      </HStack>
+
+      <Center>
+        <Divider borderWidth={"1.5px"} w={"90%"} mt={"5%"} />
+      </Center>
+ 
+ 
+
+    <HStack justify={"center"} alignSelf={"center"}> 
+
+    <Box  p={"0%"} border={"1px solid black"}   w={"900px"} h={"348"} 
+      borderRadius={"10px"} >
+
+
+    </Box>
+      <Box    p={"0%"}  >
+
+      <Wrap
+      display={"flex"}
+      justifyContent={"center"}
+    
+     
+      border={"1px solid black"}
+  
+ 
+      borderRadius={"10px"}
+     
+    >
+      <div  > 
+        <Text   padding={"10px"}>
+        <Stat fontSize={"100px"} >
+    <StatLabel fontSize={"25px"}>User Growth</StatLabel>
+    <StatNumber  fontSize={"20px"}>5,345,670</StatNumber>
+    <StatHelpText>
+      <StatArrow type='increase' />
+      52.52%
+    </StatHelpText>
+  </Stat>
+
+        </Text>
+
+  
+      <LineChart
+      
+          width={600}
+          height={230}
+          data={data}
+          margin={{
+            top:10,
+            right: 25,
+            left: 10,
+            bottom:10 ,
+          }}
+        >
+
+<XAxis dataKey="name" />
+
+   
+          <Tooltip   dataKey="name"  />
+
+          <Line type="monotone"  dataKey="UserGrowth" stroke="#8884d8" strokeWidth={2} />
+        </LineChart>
+      </div>
+    </Wrap>
+
+        
+
+
+      </Box>
+    </HStack>
+
     </>
   );
 }
+
+
