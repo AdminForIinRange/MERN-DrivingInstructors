@@ -23,7 +23,6 @@ import {
   FormHelperText,
   MenuItemOption,
   MenuOptionGroup,
- 
   HStack,
   Heading,
   InputGroup,
@@ -34,23 +33,26 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Highlight ,
+  Highlight,
   CardFooter,
   AspectRatio,
   ButtonGroup,
   Center,
-   Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  StatArrow,
-  StatGroup,
 } from "@chakra-ui/react";
 
-
-
-import { PureComponent } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,LineChart, Line, Legend } from 'recharts';
+import { PureComponent } from "react";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  Legend,
+} from "recharts";
 
 import "./Home.css";
 import {
@@ -58,17 +60,18 @@ import {
   Search2Icon,
   ChevronDownIcon,
   UpDownIcon,
+  ChatIcon,
+  CheckIcon,
 } from "@chakra-ui/icons";
+
+import { FaShare, FaCheck, FaComment } from "react-icons/fa";
 import homeCollage from "../../assets/Images/New Car.png";
-import { useState, useEffect,  } from "react";
+import { useState, useEffect } from "react";
 import Car3d from "../../assets/Images/3d car.png";
 import Workplace3D from "../../assets/Images/3d workplace.png";
 import Office3d from "../../assets/Images/Office 3d.png";
 import SeaNSun from "../../assets/Images/SeaNsun.png";
 export default function home() {
-
-
-
   const data = [
     {
       name: "2016",
@@ -103,9 +106,6 @@ export default function home() {
       UserGrowth: 5345670, // Update this value with the new count
     },
   ];
-  
-
-
 
   const [selectedValueAsset, setSelectedValueAsset] = useState("Suburb");
   const [inputValue, setInputValue] = useState("");
@@ -189,15 +189,6 @@ export default function home() {
     return () => clearTimeout(timeout);
   }, [refreshKey]);
 
-
-
-
-
-
-
-
-
-
   return (
     <>
       <Box
@@ -229,8 +220,6 @@ export default function home() {
         w={"95%"}
         borderRadius={"20px"}
         p={"2% 10%"}
-       
-
       >
         <HStack justify={"center"}>
           <Text
@@ -308,7 +297,7 @@ export default function home() {
                 xxxl: "800px",
               }}
             >
-              <Input 
+              <Input
                 boxShadow={"0 0 10px 1px teal"}
                 transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
                 _hover={{
@@ -345,7 +334,6 @@ export default function home() {
                 borderColor={"#4FD1C5"}
               />
 
-              
               <Button
                 boxShadow={"0 0 10px 1px teal"}
                 transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
@@ -375,14 +363,12 @@ export default function home() {
         </span>
 
         <HStack
-      
           justify={"center"}
           mt={"2%"}
           mb={"5%"}
           transition="transform, 0.3s ease-in-out"
         >
-          <ButtonGroup
-             transition="transform, 0.3s ease-in-out">
+          <ButtonGroup transition="transform, 0.3s ease-in-out">
             <Text
               fontSize={"30px"}
               fontWeight={"700"}
@@ -391,14 +377,11 @@ export default function home() {
             ></Text>
 
             <Wrap
-              
               onClick={(event) =>
                 handleInput(event, setInputValue(event.target.value))
               }
             >
               <Button
-              
-              
                 value={"Performance Tuning/Racing Services"}
                 transition="transform, 0.3s ease-in-out"
                 p={{
@@ -453,7 +436,6 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
-               
               >
                 Rental
               </Button>
@@ -483,7 +465,6 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
-               
               >
                 Instruction/Training
               </Button>
@@ -514,7 +495,6 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
-               
               >
                 Vehicle Restoration
               </Button>
@@ -544,7 +524,6 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
-               
               >
                 Parts/Accessories Sales
               </Button>
@@ -574,7 +553,6 @@ export default function home() {
                 colorScheme="teal"
                 variant="outline"
                 size={"sm"}
-             
               >
                 Detailing /Cleaning
               </Button>
@@ -794,21 +772,12 @@ export default function home() {
                 }}
               >
                 <Text
-               
                   fontWeight={"bold"}
                   transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
                   _hover={{ transform: "scale(1.1)" }}
-  
-              
-             
-              
-                 
-             
                 >
                   Become a Provider. <i class="gg-arrow-long-right"></i>
                 </Text>
-
-                
               </GridItem>
             </Grid>
           </Box>
@@ -969,7 +938,7 @@ export default function home() {
                   xxl: "50px",
                 }}
               >
-                1 Million Providers
+                Transforming Rides, Elevating Journeys
               </Heading>
             </Box>
           </>
@@ -1639,7 +1608,7 @@ export default function home() {
         }}
         mb={"1%"}
       >
-         <Divider borderWidth={"1.5px"} w={"90%"} />
+        <Divider borderWidth={"1.5px"} w={"90%"} />
         <HStack
           fontFamily={"Raleway"}
           fontSize={{ base: "25px", xsm: "25px", ssm: "35px", sm: "40px" }}
@@ -2454,13 +2423,12 @@ export default function home() {
         </ul>
       </div>
       <Box position="relative" padding="10">
-      <Divider borderWidth={"1.5px"}  w={"90%"} />
+        <Divider borderWidth={"1.5px"} w={"90%"} />
         <HStack
           fontFamily={"Raleway"}
           fontSize={{ base: "25px", xsm: "25px", ssm: "35px", sm: "40px" }}
           fontWeight={"bold"}
           color={"balck"}
-         
           px="4"
         >
           <Text>Customers</Text>
@@ -3273,109 +3241,125 @@ export default function home() {
       <Center>
         <Divider borderWidth={"1.5px"} w={"90%"} mt={"5%"} />
       </Center>
- 
-      <HStack justify={"center"} mt={"2%"} >
 
-    
-
-      <AspectRatio  w={{ base: "100%",
-          xsm: "90%",
-          ssm: "90%",
-          sm: "90%",
-          md: "90%",
-          lg: "90%",
-          xl: "90%  ",
-          xxl: "90%",}}
-          
-          
-          h={{ base: "300px",
-          xsm: "300px",
-          ssm: "400px",
-          sm: "500px",
-          md: "600px",
-          lg: "600px",
-          xl: "600px",
-          xxl: "600px",}}>
-<iframe  style={{borderRadius:"20px"}} width={"100%"}  height={"100%"} src="https://www.youtube.com/embed/NPwRWzpSxKU?si=EGE2YvVQ49Ql9e6K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-</AspectRatio>
-
-
-        
+      <HStack justify={"center"} mt={"2%"}>
+        <AspectRatio
+          w={{
+            base: "100%",
+            xsm: "90%",
+            ssm: "90%",
+            sm: "90%",
+            md: "90%",
+            lg: "90%",
+            xl: "90%  ",
+            xxl: "90%",
+          }}
+          h={{
+            base: "300px",
+            xsm: "300px",
+            ssm: "400px",
+            sm: "500px",
+            md: "600px",
+            lg: "600px",
+            xl: "600px",
+            xxl: "600px",
+          }}
+        >
+          <iframe
+            style={{ borderRadius: "20px" }}
+            width={"100%"}
+            height={"100%"}
+            src="https://www.youtube.com/embed/NPwRWzpSxKU?si=EGE2YvVQ49Ql9e6K"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </AspectRatio>
       </HStack>
 
       <Center>
-        <Divider borderWidth={"1.5px"} w={"90%"} mt={"5%"} />
+        <Divider borderWidth={"1.5px"} w={"90%"} mt={"5%"} mb={"5%"} />
       </Center>
- 
- 
 
-    <HStack justify={"center"} alignSelf={"center"}> 
-
-    <Box  p={"0%"} border={"1px solid black"}   w={"900px"} h={"348"} 
-      borderRadius={"10px"} >
-
-
-    </Box>
-      <Box    p={"0%"}  >
-
-      <Wrap
-      display={"flex"}
-      justifyContent={"center"}
-    
+      <HStack justify={"center"}>
+        <Box
+          border="1px"
+          borderColor="gray.200"
+          borderRadius="lg"
+          p={5}
+          maxW={"450px"}
+          maxH={"500px"}
      
-      border={"1px solid black"}
-  
- 
-      borderRadius={"10px"}
-     
-    >
-      <div  > 
-        <Text   padding={"10px"}>
-        <Stat fontSize={"100px"} >
-    <StatLabel fontSize={"25px"}>User Growth</StatLabel>
-    <StatNumber  fontSize={"20px"}>5,345,670</StatNumber>
-    <StatHelpText>
-      <StatArrow type='increase' />
-      52.52%
-    </StatHelpText>
-  </Stat>
-
-        </Text>
-
-  
-      <LineChart
-      
-          width={600}
-          height={230}
-          data={data}
-          margin={{
-            top:10,
-            right: 25,
-            left: 10,
-            bottom:10 ,
-          }}
         >
+          <HStack mb={"4%"}>
+            <Avatar
+              name="Segun Adebayo"
+              src="https://source.unsplash.com/a-man-sitting-in-front-of-a-laptop-computer-War5bJ-O2OU"
+              mr={"10px"}
+            />{" "}
+            <Heading fontSize={{ base: "16px", xsm: "16px", ssm: "16px", sm:"20px" }}>
+              Adam Qin
+              <Text whiteSpace="normal" as="span" fontWeight="light">
+                - Rental
+              </Text>
+            </Heading>
+          </HStack>
 
-<XAxis dataKey="name" />
-
-   
-          <Tooltip   dataKey="name"  />
-
-          <Line type="monotone"  dataKey="UserGrowth" stroke="#8884d8" strokeWidth={2} />
-        </LineChart>
-      </div>
-    </Wrap>
-
-        
-
-
-      </Box>
-    </HStack>
-
+          <center>
+            <Divider />
+          </center>
+          <Text
+            whiteSpace="normal"
+            textDecoration={"w"}
+            mt={"3"}
+            mb={"3"}
+            fontSize={{
+              base: "8px",
+              xsm: "8px",
+              ssm: "8px",
+              sm: "10px",
+              md: "16px",
+              lg: "16px",
+              xl: "16px",
+              xxl: "16px",
+              xxxl: "16px",
+            }}
+          >
+            "The simplicity of this platform for service providers is a
+            game-changer."
+          </Text>
+          <Divider />
+          <Box
+            width={"100%"}
+            backgroundImage={
+              "https://source.unsplash.com/a-man-sitting-in-front-of-a-laptop-computer-War5bJ-O2OU"
+            }
+            border={"1px solid black"}
+            borderRadius={"10px"}
+            h={"300px"}
+          ></Box>
+          <HStack spacing={4} justify="space-around" >
+            <Text>
+              <Button variant={"ghost"} leftIcon={<FaShare  />}>
+               Share
+              </Button>
+            </Text>
+            <Text>
+              <Button   variant={"ghost"} leftIcon={ <FaCheck />}>
+              Like
+                
+              </Button>
+            </Text>
+            <Text>
+              <Button  variant={"ghost"} leftIcon={<FaComment />}>
+                Comment
+             
+              </Button>
+            </Text>
+          </HStack>
+        </Box>
+      </HStack>
     </>
   );
 }
-
-
