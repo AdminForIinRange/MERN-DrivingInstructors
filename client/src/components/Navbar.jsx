@@ -69,10 +69,13 @@ export default function Navbar() {
               </MenuButton>
               <MenuList>
                 <MenuItem>Main</MenuItem>
-                <MenuItem>AboutUs</MenuItem>
-                <MenuItem>Watch List</MenuItem>
+                <MenuItem>Services</MenuItem>
+                <MenuItem>Login</MenuItem>
+                <MenuItem>About</MenuItem>
+                <MenuItem>Account</MenuItem>
                 <MenuItem>Dashboard</MenuItem>
-                <MenuItem>Settings</MenuItem>
+       
+
               </MenuList>
             </Menu>
           ) : (
@@ -95,9 +98,9 @@ export default function Navbar() {
               </Button>
 
              </NavLink>
-             <NavLink to="WatchList">
+             <NavLink to="About">
              <Button fontSize="sm"  color={"Black"} variant='ghost' w="auto">
-             WatchList
+             About
               </Button>
 
              </NavLink>

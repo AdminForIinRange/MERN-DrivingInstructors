@@ -40,6 +40,10 @@ const serviceProviderSchema = new Schema(
       zipCode: String,
     },
 
+
+    ServiceHeader: String,
+      
+
     // Driver's License
     drivingLicenseNumber: {
       type: String,
@@ -118,6 +122,10 @@ const serviceProviderSchema = new Schema(
       },
     ],
 
+
+    templatePost: String,
+
+    
     // Payment Methods
     paymentMethods: [String],
 
@@ -135,25 +143,21 @@ const serviceProviderSchema = new Schema(
     // Posts
     posts: [
       {
-        postId: {
-          type: Schema.Types.ObjectId,
-          ref: "Post",
-        },
-        content: String,
+      
+        image: String,
+        Caption: String,
         likes: [
           {
-            userId: {
-              type: Schema.Types.ObjectId,
-              ref: "User",
-            },
+            userId: String, // Storing user ID directly as a string
           },
         ],
+        likesCount: {
+          type: Number,
+          default: 0, // Initial count of likes set to zero
+        },
         comments: [
           {
-            userId: {
-              type: Schema.Types.ObjectId,
-              ref: "User",
-            },
+            userId: String, // Storing user ID directly as a string
             comment: String,
             createdAt: { type: Date, default: Date.now },
           },
@@ -161,7 +165,7 @@ const serviceProviderSchema = new Schema(
         createdAt: { type: Date, default: Date.now },
       },
     ],
-
+    
     // Followers/Following
     followers: [
       {
@@ -181,15 +185,7 @@ const serviceProviderSchema = new Schema(
     ],
 
     // Saved Posts
-    savedPosts: [
-      {
-        postId: {
-          type: Schema.Types.ObjectId,
-          ref: "Post",
-        },
-      },
-    ],
-
+  
     
     servicesOffered: [
       {
