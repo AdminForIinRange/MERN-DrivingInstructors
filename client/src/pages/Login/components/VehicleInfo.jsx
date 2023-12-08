@@ -1,6 +1,3 @@
-//watch a 8h react tut, 1 from free code, one from that moren desgin guy and one from bob ziroll
-// total 24 hours, / itto a week and you will be more expeiced then 80% in one week beacuse u allredy kknow react fairly well
-//compalete this project firstt
 import { useState } from "react";
 import {
   Step,
@@ -9,11 +6,9 @@ import {
   StepIcon,
   StepIndicator,
   StepNumber,
-  Checkbox,
-  CheckboxGroup,
+  Checkbox, CheckboxGroup ,
   StepSeparator,
   Textarea,
-  
   StepStatus,
   StepTitle,
   Stepper,
@@ -49,10 +44,9 @@ import {
   Image,
   useSteps,
   AbsoluteCenter,
-  Spacer,
 } from "@chakra-ui/react";
 
-export default function LoginSignup() {
+export default function VehicleInfo() {
   const [fromOne, setFormOne] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [additionalInfo, setAdditionalInfo] = useState("");
@@ -131,15 +125,9 @@ export default function LoginSignup() {
         </Heading>
       </HStack>
 
-      <HStack
-        justify={"center"}
-        p={"0 5%"}
-        align={"start"}
-        wrap={"wrap"}
-        gap={"1%"}
-      >
-        <Card
-          mb={"5%"}
+      <HStack justify={"center"} p={"0 5%"} align={"start"} wrap={"wrap"} gap={"1%"} >
+        
+        <Card mb={"5%"}
           maxW={"800px"}
           transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
           _hover={{
@@ -147,49 +135,48 @@ export default function LoginSignup() {
             boxShadow: "0px  0px 1px rgb(0,0,0)",
           }}
         >
+          
           <CardBody>
             <Stack padding={"0 60px"}>
               <FormControl>
-                <HStack
-                  gap={"10%"}
-                  justify={"center"}
-                  wrap={"nowrap"}
-                  whiteSpace={"nowrap"}
-                >
-
-                  <HStack justify={"left"}>
-
-                  <Checkbox defaultChecked size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
-
-Dgree
-  
-  </Text> </Checkbox>
-  <Checkbox defaultChecked  size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
-
-Certficate
-  
-  </Text> </Checkbox>
-
-
-
-
-                  </HStack>
-                  
-                 
-
-                  <Input
-                    fontSize={"20px"}
-                    mb={"50px"}
-                    borderRadius={"0%"}
-                    border={"0px solid black "}
-                    borderBottom="2px solid black" // Adjust the width and color as needed
-                    type="Name of School"
-                    placeholder="Name of School"
-                  />
-                </HStack>
-                <Text  >Date of study</Text>
                 
+                <Input
+                  fontSize={"20px"}
+                  mb={"50px"}
+                  borderRadius={"0%"}
+                  border={"0px solid black "}
+                  borderBottom="2px solid black" // Adjust the width and color as needed
+                  type="Vehicle Type"
+                  placeholder="Vehicle Type"
+                />
+                
+                <HStack
+                  gap={"10%"}
+                  justify={"center"}
+                  wrap={"nowrap"}
+                  whiteSpace={"nowrap"}
+                >
+                  
+                  <Input
+                    fontSize={"20px"}
+                    mb={"50px"}
+                    borderRadius={"0%"}
+                    border={"0px solid black "}
+                    borderBottom="2px solid black" // Adjust the width and color as needed
+                    type="Make"
+                    placeholder="Make"
+                  />
 
+                  <Input
+                    fontSize={"20px"}
+                    mb={"50px"}
+                    borderRadius={"0%"}
+                    border={"0px solid black "}
+                    borderBottom="2px solid black" // Adjust the width and color as needed
+                    type="Model"
+                    placeholder="Model"
+                  />
+                </HStack>
                 <HStack
                   gap={"10%"}
                   justify={"center"}
@@ -202,28 +189,30 @@ Certficate
                     borderRadius={"0%"}
                     border={"0px solid black "}
                     borderBottom="2px solid black" // Adjust the width and color as needed
-                    type="Date"
-                    placeholder="Date of study"
+                    type="Year"
+                    placeholder="Year"
                   />
 
-<Input
+                  <Input
                     fontSize={"20px"}
                     mb={"50px"}
                     borderRadius={"0%"}
                     border={"0px solid black "}
                     borderBottom="2px solid black" // Adjust the width and color as needed
-                    type="Title of Study"
-                    placeholder="Title of Study"
+                    type="Vehicle Color"
+                    placeholder="Vehicle Color"
                   />
-               
                 </HStack>
 
-             
-            
-                  <Text  >End of study</Text>
-
-            
-
+                <Input
+                  fontSize={"20px"}
+                  mb={"50px"}
+                  borderRadius={"0%"}
+                  border={"0px solid black "}
+                  borderBottom="2px solid black" // Adjust the width and color as needed
+                  type="License Number"
+                  placeholder="License Number"
+                />
                 <HStack
                   gap={"10%"}
                   justify={"center"}
@@ -236,72 +225,28 @@ Certficate
                     borderRadius={"0%"}
                     border={"0px solid black "}
                     borderBottom="2px solid black" // Adjust the width and color as needed
-                    type="Date"
-                    placeholder="Date of study"
+                    type="Plate"
+                    placeholder="Plate"
                   />
 
-<Input
+                  <Input
                     fontSize={"20px"}
                     mb={"50px"}
                     borderRadius={"0%"}
                     border={"0px solid black "}
                     borderBottom="2px solid black" // Adjust the width and color as needed
-                    type="Field of Study"
-                    placeholder="Field of Study"
+                    type="VIN"
+                    placeholder="VIN"
                   />
-               
+                  
                 </HStack>
                 
-                <Text mb={"10px"}>Upload Document</Text>
-                <HStack
-                  gap={"10%"}
-                  justify={"center"}
-                  wrap={"nowrap"}
-                  whiteSpace={"nowrap"}
-                >
-                  
-
-                    
-
-                  <Box
-                    border="2px dashed #aaa"
-                    borderRadius="md"
-                    padding="60px"
-                    textAlign="center"
-                    onDrop={handleFileDrop}
-                    onDragOver={handleDragOver}
-                  
-                  >
-                    <input
-                      type="file"
-                      id="fileInput"
-                      accept=".png, .jpg, .jpeg, .pdf" // Specify accepted file types
-                      style={{ display: "none" }}
-                      onChange={handleFileSelect}
-                    />
-                    <label htmlFor="fileInput">
-                      <Text fontSize="lg" cursor="pointer">
-                        {selectedFile
-                          ? `File: ${selectedFile.name}`
-                          : "Drag & Drop or Click to Upload"}
-                      </Text>
-                    </label>
-                  </Box>
-                </HStack>
               </FormControl>
+              
             </Stack>
+            
 
-            <HStack  wrap={{
-              base: "wrap",
-              xsm: "wrap",
-              ssm: "wrap",
-              sm: "wrap",
-              md: "wrap",
-              lg: "wrap",
-              xl: "nowrap",
-              xxl: "nowrap",
-              xxxl: "nowrap",
-            }} justify={"center"} gap={"5%"} mt={"5%"}>
+            <HStack justify={"center"}>
               <Button
                 borderRadius={"10px"}
                 w={"80%"}
@@ -314,31 +259,90 @@ Certficate
               >
                 Next
               </Button>
-              <Button
-                borderRadius={"10px"}
-                w={"80%"}
-                fontSize={"30px"}
-                p={"30px 30px"}
-                variant="solid"
-                colorScheme="gray"
-                mb={"3%"}
-              >
-                Add More
-              </Button>
-              <Button
-                borderRadius={"10px"}
-                w={"80%"}
-                fontSize={"30px"}
-                p={"30px 30px"}
-                variant="solid"
-                colorScheme="gray"
-                mb={"3%"}
-              >
-                Skip
-              </Button>
+              
             </HStack>
+            
           </CardBody>
+
+          
+          
         </Card>
+
+        <Card
+          maxW={"800px"}
+          transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
+          _hover={{
+            transform: "scale(1.02)",
+            boxShadow: "0px  0px 1px rgb(0,0,0)",
+          }}
+        >
+          
+          <CardBody>
+          <HStack justify={"center"}>
+          <Stack padding={"0 20px"}>
+            <FormControl>
+              <Text mb={"10px"}>Upload License for Vehicle</Text>
+
+              <Box
+                border="2px dashed #aaa"
+                borderRadius="md"
+                padding="60px"
+                textAlign="center"
+                onDrop={handleFileDrop}
+                onDragOver={handleDragOver}
+              >
+                <input
+                  type="file"
+                  id="fileInput"
+                  accept=".png, .jpg, .jpeg, .pdf" // Specify accepted file types
+                  style={{ display: "none" }}
+                  onChange={handleFileSelect}
+                />
+                <label htmlFor="fileInput">
+                  <Text fontSize="lg" cursor="pointer">
+                    {selectedFile
+                      ? `File: ${selectedFile.name}`
+                      : "Drag & Drop or Click to Upload"}
+                  </Text>
+                </label>
+              </Box>
+
+              <Text p={"20px 0px"}>Extra Information </Text>
+
+              <Textarea
+                h={"120px"}
+                value={additionalInfo}
+                onChange={handleAdditionalInfoChange}
+                placeholder="Enter additional information..."
+              />
+              
+            <HStack mt={"5%"} justify={"center"}>
+              <Button
+                borderRadius={"10px"}
+                w={"80%"}
+                fontSize={"30px"}
+              
+                p={"30px 30px"}
+                variant="solid"
+                colorScheme="gray"
+                mb={"3%"}
+              >
+                <Checkbox defaultChecked  size='lg' >  <Text  fontSize={"20px"}>
+
+                Upload For Review
+                  
+                  </Text> </Checkbox>
+              </Button>
+              
+            </HStack>
+            </FormControl>
+          </Stack>
+        </HStack>
+          </CardBody>
+          </Card>
+
+       
+       
       </HStack>
     </>
   );

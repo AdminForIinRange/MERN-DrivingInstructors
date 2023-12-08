@@ -51,9 +51,19 @@ export default function home() {
       <NavBox />
 
       
-      <Center>
-        <Divider borderWidth={"1.5px"} w={"90%"} mt={"5%"} />
-      </Center>
+   
+      <Box position="relative" padding="10" >
+        <Divider borderWidth={"1.5px"} w={"90%"} />
+        <HStack
+          fontFamily={"Raleway"}
+          fontSize={{ base: "25px", xsm: "25px", ssm: "35px", sm: "40px" }}
+          fontWeight={"bold"}
+          color={"balck"}
+          px="4"
+        >
+          <Text>Unity Empowers</Text>
+        </HStack>
+      </Box>
 
       <MiddleContent />
 
@@ -61,6 +71,19 @@ export default function home() {
 
 
       <PostMar />
+
+      <Box position="relative" padding="10" >
+        <Divider borderWidth={"1.5px"} w={"90%"} />
+        <HStack
+          fontFamily={"Raleway"}
+          fontSize={{ base: "25px", xsm: "25px", ssm: "35px", sm: "40px" }}
+          fontWeight={"bold"}
+          color={"balck"}
+          px="4"
+        >
+          <Text>Little About Us</Text>
+        </HStack>
+      </Box>
       <Vid />
 
       <ProviderReviewsMar />
@@ -91,7 +114,7 @@ export default function home() {
       </Center>
 
       <HStack bgColor={"gray.200"} p={"2% 0%"} justify={"center"} mt={"20px"} align={"start"} >
-        <Box w={"95%"} h={"300px"} borderRadius={"10px"} >
+        <Box w={"95%"} h={"100%"} borderRadius={"10px"} >
           <HStack
             wrap={{
               base: "wrap",

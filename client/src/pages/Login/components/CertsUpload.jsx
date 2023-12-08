@@ -52,7 +52,7 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
-export default function LoginSignup() {
+export default function CertsUpload() {
   const [fromOne, setFormOne] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [additionalInfo, setAdditionalInfo] = useState("");

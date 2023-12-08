@@ -45,7 +45,7 @@ export default function CustomersReviewsMar() {
           color={"balck"}
           px="4"
         >
-          <Text>Providers</Text>
+          <Text>Customers Reviews</Text>
         </HStack>
       </Box>
 

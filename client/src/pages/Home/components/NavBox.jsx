@@ -41,19 +41,7 @@ import {
   } from "@chakra-ui/react";
   import { NavLink } from "react-router-dom";
   import { PureComponent } from "react";
-  import {
-    AreaChart,
-    Area,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    ResponsiveContainer,
-    LineChart,
-    Line,
-    Legend,
-  } from "recharts";
-  
+
   import "../Home.css";
   import {
     PhoneIcon,
@@ -72,13 +60,11 @@ import {
     FaYoutube,
     FaLinkedin,
   } from "react-icons/fa";
-  import { FaXTwitter } from "react-icons/fa6";
-  import homeCollage from "../../../assets/Images/New Car.png";
-  import { useState, useEffect } from "react";
+
   import Car3d from "../../../assets/Images/3d car.png";
   import Workplace3D from "../../../assets/Images/3d workplace.png";
   import Office3d from "../../../assets/Images/Office 3d.png";
-  import SeaNSun from "../../../assets/Images/SeaNsun.png";
+  
 
 export default function NavBox() {
 
