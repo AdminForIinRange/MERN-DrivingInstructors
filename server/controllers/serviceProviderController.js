@@ -50,6 +50,9 @@ const postServiceProvider = async (req, res) => {
     vehicleDetails: { make, model, year, color, licensePlate, vin }, // Destructuring nested vehicleDetails object
     bio,
     profilePicture,
+    ServiceHeader,
+    templatePost,
+    templatePostImg,
     website,
     socialLinks: { facebook, twitter, linkedin, instagram, youtube }, // Destructuring nested socialLinks object
     availableServices,
@@ -70,6 +73,8 @@ const postServiceProvider = async (req, res) => {
     followers, 
     following, 
     savedPosts, 
+    templateReview,
+    
     servicesOffered: serviceOfferedData // Destructuring servicesOffered and renaming it to serviceOfferedData
   } = req.body;
   
@@ -81,36 +86,40 @@ const postServiceProvider = async (req, res) => {
     // Create a new serviceProvider
     const serviceProvider = await ServiceProvider.create({
       userId,
-  username,
-  fullName,
-  email,
-  password,
-  phoneNumber,
-  address: { street, city, state, zipCode }, // Destructuring nested address object
-  drivingLicenseNumber,
-  vehicleDetails: { make, model, year, color, licensePlate, vin }, // Destructuring nested vehicleDetails object
-  bio,
-  profilePicture,
-  website,
-  socialLinks: { facebook, twitter, linkedin, instagram, youtube }, // Destructuring nested socialLinks object
-  availableServices,
-  experienceYears,
-  hourlyRate,
-  languagesSpoken,
-  certifications,
-  reviews, 
-  education, 
-  availability, 
-  specializations,
-  memberships, 
-  paymentMethods, 
-  isActive,
-  isVerified,
-  verifiedAt,
-  posts, 
-  followers, 
-  following, 
-  savedPosts, 
+    username,
+    fullName,
+    email,
+    password,
+    phoneNumber,
+    address: { street, city, state, zipCode }, // Destructuring nested address object
+    drivingLicenseNumber,
+    vehicleDetails: { make, model, year, color, licensePlate, vin }, // Destructuring nested vehicleDetails object
+    bio,
+    profilePicture,
+    ServiceHeader,
+    templatePost,
+    templatePostImg,
+    website,
+    socialLinks: { facebook, twitter, linkedin, instagram, youtube }, // Destructuring nested socialLinks object
+    availableServices,
+    experienceYears,
+    hourlyRate,
+    languagesSpoken,
+    certifications,
+    reviews, 
+    education, 
+    availability, 
+    specializations,
+    memberships, 
+    paymentMethods, 
+    isActive,
+    isVerified,
+    verifiedAt,
+    posts, 
+    followers, 
+    following, 
+    savedPosts, 
+    templateReview,
   servicesOffered: serviceOfferedData // Destructuring servicesOffered and renaming it to serviceOfferedData
     });
 

@@ -49,6 +49,7 @@ const clientProfileSchema = new Schema(
         // Profile Details
         bio: String,
         profilePicture: String,
+        
 
     
         // Social Links

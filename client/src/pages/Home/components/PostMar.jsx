@@ -1,4 +1,4 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import {
   Box,
   HStack,
@@ -19,6 +19,7 @@ import { FaShare, FaCheck, FaComment } from "react-icons/fa";
 
 
 export default function PostMar() {
+  const [serviceProviders, setServiceProviders] = useState([]);
 
       const PostFooter = () => {
     return (
@@ -45,51 +46,21 @@ export default function PostMar() {
   };
 
 
-  const items = [
-    {
-      name: "Augustus Caesar",
-      src: "https://source.unsplash.com/man-in-gray-jacket-wearing-black-sunglasses-sitting-on-orange-car-seat-during-daytime-brc2sfT65gE",
-      category: "Transportation",
-      description:
-        "Absolutely thrilled. I've just welcomed my 100th client on board! 🎉🙌🏼 Thank you to each and every one of you. 🚀💫",
-      imageSrc:
-        "https://source.unsplash.com/empty-black-helicopter-NJYLizdTYbo",
-    },
-    {
-      name: "Henry Smith",
-      src: "https://source.unsplash.com/man-in-black-and-white-long-sleeve-shirt-wearing-sunglasses-standing-beside-green-plant-9hICYHdL6u0",
-      category: "Insurance/Financing Services",
-      description:
-        "Securing Dreams, One Policy at a Time. 💼✨ Grateful for the Opportunity to Safeguard Your Tomorrow. 🛡️💸",
-      imageSrc:
-        "https://source.unsplash.com/person-holding-black-android-smartphone-DsOnBvYOAYs",
-    },
-    {
-      name: "Straw Hat Luffy",
-      src: "https://source.unsplash.com/brown-and-white-dragon-figurine-nU-uOifIwEk",
-      category: "Customization/Modification",
-      description:
-        "From tailored solutions to personalized strategies, I thrive on customizing and modifying approaches to fit your unique needs.",
-      imageSrc:
-        "https://source.unsplash.com/purple-and-black-porsche-911-yRtrDLJfHzw",
-    },
-    {
-      name: "Adam Qin",
-      src: "https://source.unsplash.com/a-man-sitting-in-front-of-a-laptop-computer-War5bJ-O2OU",
-      category: "Rental",
-      description:
-        "Let us be a part of your journey and make your moments extraordinary! 🌟",
-      imageSrc:
-        "https://source.unsplash.com/orange-jeep-wrangler-parked-near-green-trees-during-daytime-hVjYF5DOqU8",
-    },
-    
-  ];
-
-
-
-   
-  
-    
+  useEffect(() => {
+    fetch('http://localhost:4000/api/serviceProviders')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setServiceProviders(data);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  }, []);
        
     
     
@@ -126,7 +97,7 @@ export default function PostMar() {
       <HStack overflowY={"auto"} gap={"1%"} justify={"center"} align={"start"}>
         <div class="marquee marquee--hover-pause">
         <ul className="marquee__content">
-      {items.map((item, index) => (
+      {serviceProviders.map((serviceProvider, index) => (
         <li key={index}>
           <Box
             border="1px"
@@ -137,16 +108,16 @@ export default function PostMar() {
             maxH={"100%"}
           >
             <HStack mb={"3%"}>
-              <Avatar src={item.src} mr={"10px"} />
+              <Avatar src={serviceProvider.profilePicture} mr={"10px"} />
               <Heading fontSize={{
                 base: "16px",
                 xsm: "16px",
                 ssm: "16px",
                 sm: "20px",
               }}>
-                {item.name}
+                {serviceProvider.fullName}
                 <Text whiteSpace="normal" as="span" fontWeight="light">
-                  - {item.category}
+                  - {serviceProvider.ServiceHeader}
                 </Text>
               </Heading>
             </HStack>
@@ -165,11 +136,12 @@ export default function PostMar() {
                 sm: "16px",
               }}
             >
-              {item.description}
+              {serviceProvider.templatePost}
+              
             </Text>
             <Box
               width={"100%"}
-              backgroundImage={item.imageSrc}
+              backgroundImage={serviceProvider.templatePostImg}
               backgroundSize={"100%"}
               backgroundPosition={"center"}
               backgroundRepeat={"no-repeat"}
@@ -180,9 +152,8 @@ export default function PostMar() {
           </Box>
         </li>
       ))}
-    </ul>
-    <ul className="marquee__content">
-      {items.map((item, index) => (
+    </ul><ul className="marquee__content">
+      {serviceProviders.map((serviceProvider, index) => (
         <li key={index}>
           <Box
             border="1px"
@@ -193,16 +164,16 @@ export default function PostMar() {
             maxH={"100%"}
           >
             <HStack mb={"3%"}>
-              <Avatar src={item.src} mr={"10px"} />
+              <Avatar src={serviceProvider.profilePicture} mr={"10px"} />
               <Heading fontSize={{
                 base: "16px",
                 xsm: "16px",
                 ssm: "16px",
                 sm: "20px",
               }}>
-                {item.name}
+                {serviceProvider.fullName}
                 <Text whiteSpace="normal" as="span" fontWeight="light">
-                  - {item.category}
+                  - {serviceProvider.ServiceHeader}
                 </Text>
               </Heading>
             </HStack>
@@ -221,11 +192,11 @@ export default function PostMar() {
                 sm: "16px",
               }}
             >
-              {item.description}
+              {serviceProvider.templatePost}
             </Text>
             <Box
               width={"100%"}
-              backgroundImage={item.imageSrc}
+              backgroundImage={serviceProvider.templatePostImg}
               backgroundSize={"100%"}
               backgroundPosition={"center"}
               backgroundRepeat={"no-repeat"}

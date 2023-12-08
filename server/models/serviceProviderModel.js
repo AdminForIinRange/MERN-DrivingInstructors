@@ -8,6 +8,9 @@ const serviceProviderSchema = new Schema(
       type: Number,
      
     },
+
+
+    
     username: {
       type: String,
      
@@ -31,6 +34,7 @@ const serviceProviderSchema = new Schema(
       type: String,
      
     },
+
 
     // Address
     address: {
@@ -124,7 +128,8 @@ const serviceProviderSchema = new Schema(
 
 
     templatePost: String,
-
+    templatePostImg: String,
+    templateReview: String,
     
     // Payment Methods
     paymentMethods: [String],
@@ -140,6 +145,7 @@ const serviceProviderSchema = new Schema(
     },
     verifiedAt: Date,
 
+  
     // Posts
     posts: [
       {

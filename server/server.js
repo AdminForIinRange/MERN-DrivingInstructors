@@ -4,9 +4,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const serviceProviderRoutes = require("./routes/serviceProvider.js");
 const clientProfileRoutes = require("./routes/clientProfile.js");
+const cors = require("cors"); // Import the CORS package
 
 const app = express();
-
+app.use(cors());
 // Middleware----------------------------------------------------------------
 
 // The first line, app.use(express.json()), adds middleware to parse JSON request bodies.
