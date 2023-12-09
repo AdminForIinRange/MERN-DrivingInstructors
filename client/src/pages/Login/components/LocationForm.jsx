@@ -44,7 +44,7 @@ import {
   AbsoluteCenter,
 } from "@chakra-ui/react";
 
-export default function LoginSignup() {
+export default function LocationForm() {
 const [fromOne, setFormOne] = useState(null);
 
   const steps = [

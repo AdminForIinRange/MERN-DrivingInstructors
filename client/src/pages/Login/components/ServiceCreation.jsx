@@ -65,7 +65,7 @@ import {
 } from "@chakra-ui/react";
 import { TfiMoney } from "react-icons/tfi";
 import { AddIcon } from "@chakra-ui/icons";
-export default function LoginSignup() {
+export default function ServiceCreation() {
   const steps = [
     { title: "First", description: "Contact Info" },
     { title: "Second", description: "Date & Time" },

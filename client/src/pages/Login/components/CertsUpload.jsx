@@ -150,6 +150,29 @@ export default function CertsUpload() {
           <CardBody>
             <Stack padding={"0 60px"}>
               <FormControl>
+
+              <HStack justify={"center"}>
+                   
+                   <Checkbox defaultChecked size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
+
+Dgree
+ 
+ </Text> </Checkbox>
+ <Checkbox defaultChecked  size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
+
+Certficate
+ 
+ </Text> </Checkbox>
+
+                 
+
+
+                
+
+
+
+
+                 </HStack>
                 <HStack
                   gap={"10%"}
                   justify={"center"}
@@ -157,23 +180,7 @@ export default function CertsUpload() {
                   whiteSpace={"nowrap"}
                 >
 
-                  <HStack justify={"left"}>
-
-                  <Checkbox defaultChecked size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
-
-Dgree
-  
-  </Text> </Checkbox>
-  <Checkbox defaultChecked  size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
-
-Certficate
-  
-  </Text> </Checkbox>
-
-
-
-
-                  </HStack>
+                 
                   
                  
 

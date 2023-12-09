@@ -135,7 +135,7 @@ export default function MiddleContent() {
                   _hover={{ transform: "scale(1.1)" }}
                 >
                   <CardHeader>
-                    <Heading>1 Million Providers</Heading>
+                    <Heading>5 Million Users</Heading>
                   </CardHeader>
 
                   <CardBody>
@@ -152,7 +152,7 @@ export default function MiddleContent() {
                       }}
                     >
                       This vast network ensures an extensive range of options
-                      and expertise
+                      expertise and Customers
                     </Text>
                   </CardBody>
                 </Card>
