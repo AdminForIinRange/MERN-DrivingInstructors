@@ -3,29 +3,18 @@ import {
   Button,
   Box,
   useBreakpointValue,
-
   Wrap,
-
   Text,
- 
   HStack,
   Heading,
-
   Divider,
- 
   Center,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
-
 import "./Home.css";
 
-import {
-
-  FaInstagram,
-  FaYoutube,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 import { useState, useEffect } from "react";
@@ -40,19 +29,15 @@ import ProviderReviewsMar from "./components/ProviderReviewsMar";
 import CustomersReviewsMar from "./components/CustomersReviewsMar.jsx";
 
 export default function home() {
- 
   return (
     <>
-    <Header />
-      
+      <Header />
 
       <Collage />
 
       <NavBox />
 
-      
-   
-      <Box position="relative" padding="10" >
+      <Box position="relative" padding="10">
         <Divider borderWidth={"1.5px"} w={"90%"} />
         <HStack
           fontFamily={"Raleway"}
@@ -67,12 +52,9 @@ export default function home() {
 
       <MiddleContent />
 
-      
-
-
       <PostMar />
 
-      <Box position="relative" padding="10" >
+      <Box position="relative" padding="10">
         <Divider borderWidth={"1.5px"} w={"90%"} />
         <HStack
           fontFamily={"Raleway"}
@@ -88,12 +70,7 @@ export default function home() {
 
       <ProviderReviewsMar />
 
- 
       <CustomersReviewsMar />
-
-
-
-     
 
       <Center>
         <Divider
@@ -113,8 +90,14 @@ export default function home() {
         />
       </Center>
 
-      <HStack bgColor={"gray.200"} p={"2% 0%"} justify={"center"} mt={"20px"} align={"start"} >
-        <Box w={"95%"} h={"100%"} borderRadius={"10px"} >
+      <HStack
+        bgColor={"gray.200"}
+        p={"2% 0%"}
+        justify={"center"}
+        mt={"20px"}
+        align={"start"}
+      >
+        <Box w={"95%"} h={"100%"} borderRadius={"10px"}>
           <HStack
             wrap={{
               base: "wrap",
@@ -345,10 +328,6 @@ export default function home() {
           </HStack>
         </Box>
       </HStack>
-
-
-
-
     </>
   );
 }

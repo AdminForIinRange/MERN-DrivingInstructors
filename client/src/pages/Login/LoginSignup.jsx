@@ -65,7 +65,34 @@ import {
 } from "@chakra-ui/react";
 import { TfiMoney } from "react-icons/tfi";
 import { AddIcon } from "@chakra-ui/icons";
-export default function LoginSignup() {
+
+import LocationForm from "./components/LocationForm";
+
+import BasicInfo from "./components/BasicInfo";
+import CertsUpload from "./components/CertsUpload";
+import ServiceCreation from "./components/ServiceCreation";
+import ServiceSelection from "./components/ServiceSelection";
+import StoreCreation from "./components/StoreCreation";
+import CreationTabs from "./components/CreationTabs";
+import UploadFile from "./components/UploadFile";
+import VehicleInfo from "./components/VehicleInfo";
+import AccountDashboard from "./components/AccountDashboard";
+export default function LoginSignup({isAllowedToPass}) {
+  const [faseOne, setFaseOne] = useState(true);
+  const [faseTwo, setFaseTwo] = useState(true);
+  const [faseThree, setFaseThree] = useState(true);
+  const [faseFour, setFaseFour] = useState(true);
+  const [faseFive, setFaseFive] = useState(true);
+  const [faseSix, setFaseSix] = useState(true);
+  const [faseSeven, setFaseSeven] = useState(false);
+
+
+  const HandelNext = () =>{
+  
+
+
+  }
+
   const steps = [
     { title: "First", description: "Contact Info" },
     { title: "Second", description: "Date & Time" },
@@ -77,6 +104,7 @@ export default function LoginSignup() {
       count: steps.length,
     });
 
+  
     return (
       <Stepper
         index={activeStep}
@@ -108,6 +136,26 @@ export default function LoginSignup() {
     );
   }
 
+  const FormProgression = () => {
+    const Progression = [
+      { condition: !faseOne, component: <BasicInfo /> },
+      { condition: faseOne && !faseTwo, component: <LocationForm /> },
+      { condition: faseTwo && !faseThree, component: <UploadFile /> },
+      { condition: faseThree && !faseFour, component:  <ServiceSelection />  },
+      { condition: faseFour && !faseFive, component:  <VehicleInfo />},
+      { condition: faseFive && faseSix, component: <CertsUpload /> },
+      { condition: faseSix && !faseSeven, component: <CreationTabs /> },
+      { condition: faseSeven, component: <AccountDashboard /> }
+    ];
+  
+    for (let i = 0; i < Progression.length; i++) {
+      if (Progression[i].condition) {
+        return Progression[i].component;
+      }
+    }
+  };
+
+
   return (
     <>
       <Steper />
@@ -118,229 +166,13 @@ export default function LoginSignup() {
         </Heading>
       </HStack>
 
-      <Tabs variant="enclosed">
-        <HStack justify={"center"}>
-          <TabList>
-            <Tab>Services</Tab>
-            <Tab>Store</Tab>
-          </TabList>
-        </HStack>
-
-        <TabPanels>
-          <TabPanel>
-            <HStack justify={"center"} gap={"2%"} align={"start"} wrap={"wrap"} >
-              <Card
-              mb={"2%"}
-                maxW={"800px"}
-                transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
-                _hover={{
-                  transform: "scale(1.02)",
-                  boxShadow: "0px  0px 1px rgb(0,0,0)",
-                }}
-              >
-                <CardBody>
-                  <Stack padding={"5px 20px"}>
-                    <FormControl>
-                      <VStack justify={"center"}>
-                        <Heading as="h4" size="lg" >
-                          Basic
-                        </Heading>
-
-                        <Divider />
-                      </VStack>
-
-                      <VStack justify={"center"} mt={"10px"}  gap={"10px"}>
-                        <HStack>
-                          <Text>$</Text>
-                          <Input
-                            textAlign={"center"}
-                            borderRadius={"0%"}
-                            border={"0px solid black "}
-                            borderBottom="2px solid black" // Adjust the width and color as needed
-                            type="text"
-                            placeholder="Price"
-                          />
-                        </HStack>
-
-                        <Input
-                          textAlign={"center"}
-                          borderRadius={"0%"}
-                          border={"0px solid black "}
-                          borderBottom="2px solid black" // Adjust the width and color as needed
-                          type="text"
-                          placeholder="Condition (not required)"
-                        />
-
-                        <Textarea
-                          fontSize={"15px"}
-                          mt={"10px"}
-                          h={"5px"}
-                          placeholder="What are you offering, Exmaple: 1 hour driving lesson"
-                        />
-                        <Button colorScheme="red" size="xs">
-                          Remove
-                        </Button>
-                        <Textarea
-                          fontSize={"15px"}
-                          h={"5px"}
-                          placeholder="What are you offering, Exmaple: 1 hour driving lesson"
-                        />
-                        <Button colorScheme="red" size="xs">
-                          Remove
-                        </Button>
-                        <Button colorScheme="green" size={"sm"}>
-                          Add more
-                        </Button>
-                      </VStack>
-                    </FormControl>
-                  </Stack>
-                </CardBody>
-              </Card>
-              <Card
-               mb={"2%"}
-                maxW={"800px"}
-                transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
-                _hover={{
-                  transform: "scale(1.02)",
-                  boxShadow: "0px  0px 1px rgb(0,0,0)",
-                }}
-              >
-                <CardBody>
-                <Stack padding={"5px 20px"}>
-                    <FormControl>
-                      <VStack justify={"center"}>
-                        <Heading as="h4" size="lg" >
-                          Standard
-                        </Heading>
-
-                        <Divider />
-                      </VStack>
-
-                      <VStack justify={"center"} mt={"10px"} gap={"10px"}>
-                        <HStack>
-                          <Text>$</Text>
-                          <Input
-                            textAlign={"center"}
-                            borderRadius={"0%"}
-                            border={"0px solid black "}
-                            borderBottom="2px solid black" // Adjust the width and color as needed
-                            type="text"
-                            placeholder="Price"
-                          />
-                        </HStack>
-                        <Input
-                          textAlign={"center"}
-                          borderRadius={"0%"}
-                          border={"0px solid black "}
-                          borderBottom="2px solid black" // Adjust the width and color as needed
-                          type="text"
-                          placeholder="Condition (not required)"
-                        />
-
-                        <Textarea
-                          fontSize={"15px"}
-                          mt={"10px"}
-                          h={"5px"}
-                          placeholder="What are you offering, Exmaple: 1 hour driving lesson"
-                        />
-                        <Button colorScheme="red" size="xs">
-                          Remove
-                        </Button>
-                        <Textarea
-                          fontSize={"15px"}
-                          h={"5px"}
-                          placeholder="What are you offering, Exmaple: 1 hour driving lesson"
-                        />
-                        <Button colorScheme="red" size="xs">
-                          Remove
-                        </Button>
-                        <Button colorScheme="green" size={"sm"}>
-                          Add more
-                        </Button>
-                      </VStack>
-                    </FormControl>
-                  </Stack>
-                </CardBody>
-              </Card>
-              <Card
-                mb={"2%"}
-                maxW={"800px"}
-                transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
-                _hover={{
-                  transform: "scale(1.02)",
-                  boxShadow: "0px  0px 1px rgb(0,0,0)",
-                }}
-              >
-                <CardBody>
-                <Stack padding={"5px 20px"}>
-                    <FormControl>
-                      <VStack justify={"center"} >
-                        <Heading as="h4" size="lg" >
-                          Advanced
-                        </Heading>
-
-                        <Divider />
-                      </VStack>
-
-                      <VStack justify={"center"}  mt={"10px"}  gap={"10px"}>
-                        <HStack>
-                          <Text>$</Text>
-                          <Input
-                            textAlign={"center"}
-                            borderRadius={"0%"}
-                            border={"0px solid black "}
-                            borderBottom="2px solid black" // Adjust the width and color as needed
-                            type="text"
-                            placeholder="Price"
-                          />
-                        </HStack>
-                        <Input
-                          textAlign={"center"}
-                          borderRadius={"0%"}
-                          border={"0px solid black "}
-                          borderBottom="2px solid black" // Adjust the width and color as needed
-                          type="text"
-                          placeholder="Condition (not required)"
-                        />
-
-                        <Textarea
-                          mt={"10px"}
-                          h={"5px"}
-                          fontSize={"15px"}
-                          placeholder="What are you offering, Exmaple: 1 hour driving lesson, Exmaple: 1 hour driving lesson "
-                        />
-                        <Button colorScheme="red" size="xs">
-                          Remove
-                        </Button>
-                        <Textarea
-                          fontSize={"15px"}
-                          h={"5px"}
-                          placeholder="What are you offering, Exmaple: 1 hour driving lesson"
-                        />
-                        <Button colorScheme="red" size="xs">
-                          Remove
-                        </Button>
-                        <Button colorScheme="green" size={"sm"}>
-                          Add more
-                        </Button>
-                      </VStack>
-                    </FormControl>
-                  </Stack>
-
-                  <HStack justify={"center"}></HStack>
-                </CardBody>
-              </Card>
-            </HStack>
-          </TabPanel>
-          <TabPanel>
-            <p>two!</p>
-          </TabPanel>
-        </TabPanels>
-        <HStack justify={"center"}>
+      <FormProgression />
+      <HStack justify={"center"}>
           <Button
-            
+          visibility={isAllowedToPass ? "hidden" : "visible"}
+            mt={"20px"}
             borderRadius={"10px"}
-            w={"100px"}
+            w={"30%"}
             fontSize={"30px"}
             bgColor={"#00BF63"}
             p={"30px 30px"}
@@ -351,7 +183,6 @@ export default function LoginSignup() {
             Next
           </Button>
         </HStack>
-      </Tabs>
     </>
   );
 }

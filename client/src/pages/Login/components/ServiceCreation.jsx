@@ -66,57 +66,12 @@ import {
 import { TfiMoney } from "react-icons/tfi";
 import { AddIcon } from "@chakra-ui/icons";
 export default function ServiceCreation() {
-  const steps = [
-    { title: "First", description: "Contact Info" },
-    { title: "Second", description: "Date & Time" },
-    { title: "Third", description: "Select Rooms" },
-  ];
-  function Steper() {
-    const { activeStep } = useSteps({
-      index: 3,
-      count: steps.length,
-    });
-
-    return (
-      <Stepper
-        index={activeStep}
-        p={"20px 10%"}
-        display={"flex"}
-        flexWrap={"wrap"}
-      >
-        {steps.map((step, index) => (
-          <Step key={index}>
-            <StepIndicator>
-              <StepStatus
-                complete={<StepIcon />}
-                incomplete={<StepNumber />}
-                active={<StepNumber />}
-              />
-            </StepIndicator>
-
-            <Box flexShrink="0">
-              <StepTitle>{step.title}</StepTitle>
-              <StepDescription fontSize={"15px"}>
-                {step.description}
-              </StepDescription>
-            </Box>
-
-            <StepSeparator />
-          </Step>
-        ))}
-      </Stepper>
-    );
-  }
 
   return (
     <>
-      <Steper />
+     
 
-      <HStack justify={"center"} mb={"2%"}>
-        <Heading fontSize={"70px"} fontFamily={"Raleway"}>
-          Sign Up
-        </Heading>
-      </HStack>
+     
 
       <Tabs variant="enclosed">
         <HStack justify={"center"}>
@@ -336,21 +291,7 @@ export default function ServiceCreation() {
             <p>two!</p>
           </TabPanel>
         </TabPanels>
-        <HStack justify={"center"}>
-          <Button
-            
-            borderRadius={"10px"}
-            w={"100px"}
-            fontSize={"30px"}
-            bgColor={"#00BF63"}
-            p={"30px 30px"}
-            variant="solid"
-            colorScheme="whatsapp"
-            mb={"3%"}
-          >
-            Next
-          </Button>
-        </HStack>
+       
       </Tabs>
     </>
   );

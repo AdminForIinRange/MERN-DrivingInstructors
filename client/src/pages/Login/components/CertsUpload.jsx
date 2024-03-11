@@ -79,58 +79,12 @@ export default function CertsUpload() {
   const handleAdditionalInfoChange = (event) => {
     setAdditionalInfo(event.target.value);
   };
-  const steps = [
-    { title: "First", description: "Contact Info" },
-    { title: "Second", description: "Date & Time" },
-    { title: "Third", description: "Select Rooms" },
-  ];
-  function Steper() {
-    const { activeStep } = useSteps({
-      index: 3,
-      count: steps.length,
-    });
-
-    return (
-      <Stepper
-        index={activeStep}
-        p={"20px 10%"}
-        display={"flex"}
-        flexWrap={"wrap"}
-      >
-        {steps.map((step, index) => (
-          <Step key={index}>
-            <StepIndicator>
-              <StepStatus
-                complete={<StepIcon />}
-                incomplete={<StepNumber />}
-                active={<StepNumber />}
-              />
-            </StepIndicator>
-
-            <Box flexShrink="0">
-              <StepTitle fontSize={"20px"}>{step.title}</StepTitle>
-              <StepDescription fontSize={"15px"}>
-                {step.description}
-              </StepDescription>
-            </Box>
-
-            <StepSeparator />
-          </Step>
-        ))}
-      </Stepper>
-    );
-  }
+ 
 
   return (
     <>
-      <Steper />
-
-      <HStack justify={"center"} mb={"2%"}>
-        <Heading fontSize={"70px"} fontFamily={"Raleway"}>
-          Sign Up
-        </Heading>
-      </HStack>
-
+  
+   
       <HStack
         justify={"center"}
         p={"0 5%"}
@@ -309,22 +263,11 @@ Certficate
               xxl: "nowrap",
               xxxl: "nowrap",
             }} justify={"center"} gap={"5%"} mt={"5%"}>
+             
               <Button
                 borderRadius={"10px"}
                 w={"80%"}
-                fontSize={"30px"}
-                bgColor={"#00BF63"}
-                p={"30px 30px"}
-                variant="solid"
-                colorScheme="whatsapp"
-                mb={"3%"}
-              >
-                Next
-              </Button>
-              <Button
-                borderRadius={"10px"}
-                w={"80%"}
-                fontSize={"30px"}
+                fontSize={"lg"}
                 p={"30px 30px"}
                 variant="solid"
                 colorScheme="gray"
@@ -341,7 +284,9 @@ Certficate
                 colorScheme="gray"
                 mb={"3%"}
               >
-                Skip
+                <Checkbox size='lg' colorScheme='blue' defaultChecked>
+    Skip
+  </Checkbox>
               </Button>
             </HStack>
           </CardBody>
