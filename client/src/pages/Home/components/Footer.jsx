@@ -1,4 +1,3 @@
-
 // import { NavLink } from "react-router-dom";
 // import {
 //   HStack,
@@ -13,7 +12,7 @@
 
 // export default function Footer() {
 //   return (
-    
+
 //     <HStack bgColor={"gray.200"} p={"2% 0%"} justify={"center"} mt={"20px"} align={"start"} >
 //     <Box w={"95%"} h={"300px"} borderRadius={"10px"} >
 //       <HStack
@@ -246,6 +245,6 @@
 //       </HStack>
 //     </Box>
 //   </HStack>
-   
+
 //   );
 // }

@@ -49,7 +49,6 @@ export default function LocationForm() {
     <>
       <HStack justify={"center"} p={"0 5%"}>
         <Card
-        
           transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
           _hover={{
             transform: "scale(1.02)",

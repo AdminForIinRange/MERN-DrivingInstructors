@@ -77,7 +77,7 @@ import CreationTabs from "./components/CreationTabs";
 import UploadFile from "./components/UploadFile";
 import VehicleInfo from "./components/VehicleInfo";
 import AccountDashboard from "./components/AccountDashboard";
-export default function LoginSignup({isAllowedToPass}) {
+export default function LoginSignup({ isAllowedToPass }) {
   const [faseOne, setFaseOne] = useState(true);
   const [faseTwo, setFaseTwo] = useState(true);
   const [faseThree, setFaseThree] = useState(true);
@@ -86,12 +86,7 @@ export default function LoginSignup({isAllowedToPass}) {
   const [faseSix, setFaseSix] = useState(true);
   const [faseSeven, setFaseSeven] = useState(false);
 
-
-  const HandelNext = () =>{
-  
-
-
-  }
+  const HandelNext = () => {};
 
   const steps = [
     { title: "First", description: "Contact Info" },
@@ -104,7 +99,6 @@ export default function LoginSignup({isAllowedToPass}) {
       count: steps.length,
     });
 
-  
     return (
       <Stepper
         index={activeStep}
@@ -141,20 +135,19 @@ export default function LoginSignup({isAllowedToPass}) {
       { condition: !faseOne, component: <BasicInfo /> },
       { condition: faseOne && !faseTwo, component: <LocationForm /> },
       { condition: faseTwo && !faseThree, component: <UploadFile /> },
-      { condition: faseThree && !faseFour, component:  <ServiceSelection />  },
-      { condition: faseFour && !faseFive, component:  <VehicleInfo />},
+      { condition: faseThree && !faseFour, component: <ServiceSelection /> },
+      { condition: faseFour && !faseFive, component: <VehicleInfo /> },
       { condition: faseFive && faseSix, component: <CertsUpload /> },
       { condition: faseSix && !faseSeven, component: <CreationTabs /> },
-      { condition: faseSeven, component: <AccountDashboard /> }
+      { condition: faseSeven, component: <AccountDashboard /> },
     ];
-  
+
     for (let i = 0; i < Progression.length; i++) {
       if (Progression[i].condition) {
         return Progression[i].component;
       }
     }
   };
-
 
   return (
     <>
@@ -168,21 +161,21 @@ export default function LoginSignup({isAllowedToPass}) {
 
       <FormProgression />
       <HStack justify={"center"}>
-          <Button
+        <Button
           visibility={isAllowedToPass ? "hidden" : "visible"}
-            mt={"20px"}
-            borderRadius={"10px"}
-            w={"30%"}
-            fontSize={"30px"}
-            bgColor={"#00BF63"}
-            p={"30px 30px"}
-            variant="solid"
-            colorScheme="whatsapp"
-            mb={"3%"}
-          >
-            Next
-          </Button>
-        </HStack>
+          mt={"20px"}
+          borderRadius={"10px"}
+          w={"30%"}
+          fontSize={"30px"}
+          bgColor={"#00BF63"}
+          p={"30px 30px"}
+          variant="solid"
+          colorScheme="whatsapp"
+          mb={"3%"}
+        >
+          Next
+        </Button>
+      </HStack>
     </>
   );
 }

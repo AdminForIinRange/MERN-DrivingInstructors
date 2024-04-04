@@ -5,20 +5,13 @@ import Navbar from "../components/Navbar.jsx";
 
 export default function RootLayout() {
   return (
-    
     <div className="Layout">
-      <Grid
-        
-      >
-        <GridItem
-         
-        >
+      <Grid>
+        <GridItem>
           <Navbar />
         </GridItem>
 
-        <GridItem
-        
-        ></GridItem>
+        <GridItem></GridItem>
       </Grid>
 
       <Outlet />

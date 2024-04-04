@@ -1,21 +1,25 @@
 import React from "react";
-import { Box, HStack, Image, Heading, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Image,
+  Heading,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import homeCollage from "../../../assets/Images/New Car.png";
 export default function Collage() {
+  const backgroundImageUrls = {
+    base: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
+    xsm: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
+    ssm: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
+    sm: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
+    md: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
+  };
 
-    const backgroundImageUrls = {
-        base: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
-        xsm: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
-        ssm: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
-        sm: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
-        md: "https://source.unsplash.com/photosman-jumping-beside-red-pickup-truck-c6wBv31-L2I",
-      };
-      
-    const notSmallScreen = useBreakpointValue({ base: true, lg: false });
+  const notSmallScreen = useBreakpointValue({ base: true, lg: false });
   return (
     <>
-    
-    <HStack justify={"center"} transition="transform, 0.3s ease-in-out">
+      <HStack justify={"center"} transition="transform, 0.3s ease-in-out">
         {!notSmallScreen ? (
           <>
             <Image
@@ -67,6 +71,7 @@ export default function Collage() {
             </Box>
           </>
         )}
-      </HStack></>
-  )
+      </HStack>
+    </>
+  );
 }

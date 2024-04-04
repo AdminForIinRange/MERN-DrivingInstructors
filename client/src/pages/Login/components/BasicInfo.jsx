@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import {
   Step,
   StepDescription,
@@ -48,16 +48,9 @@ import LoginSignup from "../LoginSignup";
 export default function BasicInfo() {
   const [isAllowedToPass, setIsAllowedToPass] = useState(true);
 
- 
- 
   return (
     <>
-   
-  
-
-    
-
-    <HStack justify={"center"} p={"0 5%"}>
+      <HStack justify={"center"} p={"0 5%"}>
         <Card
           maxW={"800px"}
           transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
@@ -66,7 +59,6 @@ export default function BasicInfo() {
             boxShadow: "0px  0px 1px rgb(0,0,0)",
           }}
         >
-          
           <CardBody>
             <Stack padding={"0 60px"}>
               <FormControl>
@@ -128,35 +120,12 @@ export default function BasicInfo() {
               </FormControl>
             </Stack>
 
-            <HStack justify={"center"}>
-            
-            </HStack>
+            <HStack justify={"center"}></HStack>
           </CardBody>
         </Card>
       </HStack>
 
-      <LoginSignup 
-
-isAllowedToPass={isAllowedToPass}
-      
-      
-      />
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
+      <LoginSignup isAllowedToPass={isAllowedToPass} />
     </>
   );
 }

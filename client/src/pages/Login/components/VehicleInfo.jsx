@@ -6,7 +6,8 @@ import {
   StepIcon,
   StepIndicator,
   StepNumber,
-  Checkbox, CheckboxGroup ,
+  Checkbox,
+  CheckboxGroup,
   StepSeparator,
   Textarea,
   StepStatus,
@@ -73,20 +74,18 @@ export default function VehicleInfo() {
   const handleAdditionalInfoChange = (event) => {
     setAdditionalInfo(event.target.value);
   };
- 
-  
-
-        
 
   return (
     <>
-    
-
-     
-
-      <HStack justify={"center"} p={"0 5%"} align={"start"} wrap={"wrap"} gap={"1%"} >
-        
-        <Card mb={"5%"}
+      <HStack
+        justify={"center"}
+        p={"0 5%"}
+        align={"start"}
+        wrap={"wrap"}
+        gap={"1%"}
+      >
+        <Card
+          mb={"5%"}
           maxW={"800px"}
           transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
           _hover={{
@@ -94,11 +93,9 @@ export default function VehicleInfo() {
             boxShadow: "0px  0px 1px rgb(0,0,0)",
           }}
         >
-          
           <CardBody>
             <Stack padding={"0 60px"}>
               <FormControl>
-                
                 <Input
                   fontSize={"20px"}
                   mb={"50px"}
@@ -108,14 +105,13 @@ export default function VehicleInfo() {
                   type="Vehicle Type"
                   placeholder="Vehicle Type"
                 />
-                
+
                 <HStack
                   gap={"10%"}
                   justify={"center"}
                   wrap={"nowrap"}
                   whiteSpace={"nowrap"}
                 >
-                  
                   <Input
                     fontSize={"20px"}
                     mb={"50px"}
@@ -197,19 +193,10 @@ export default function VehicleInfo() {
                     type="VIN"
                     placeholder="VIN"
                   />
-                  
                 </HStack>
-                
               </FormControl>
-              
             </Stack>
-            
-
-           
           </CardBody>
-
-          
-          
         </Card>
 
         <Card
@@ -220,73 +207,66 @@ export default function VehicleInfo() {
             boxShadow: "0px  0px 1px rgb(0,0,0)",
           }}
         >
-          
           <CardBody>
-          <HStack justify={"center"}>
-          <Stack padding={"0 20px"}>
-            <FormControl>
-              <Text mb={"10px"}>Upload License for Vehicle</Text>
+            <HStack justify={"center"}>
+              <Stack padding={"0 20px"}>
+                <FormControl>
+                  <Text mb={"10px"}>Upload License for Vehicle</Text>
 
-              <Box
-                border="2px dashed #aaa"
-                borderRadius="md"
-                padding="60px"
-                textAlign="center"
-                onDrop={handleFileDrop}
-                onDragOver={handleDragOver}
-              >
-                <input
-                  type="file"
-                  id="fileInput"
-                  accept=".png, .jpg, .jpeg, .pdf" // Specify accepted file types
-                  style={{ display: "none" }}
-                  onChange={handleFileSelect}
-                />
-                <label htmlFor="fileInput">
-                  <Text fontSize="lg" cursor="pointer">
-                    {selectedFile
-                      ? `File: ${selectedFile.name}`
-                      : "Drag & Drop or Click to Upload"}
-                  </Text>
-                </label>
-              </Box>
+                  <Box
+                    border="2px dashed #aaa"
+                    borderRadius="md"
+                    padding="60px"
+                    textAlign="center"
+                    onDrop={handleFileDrop}
+                    onDragOver={handleDragOver}
+                  >
+                    <input
+                      type="file"
+                      id="fileInput"
+                      accept=".png, .jpg, .jpeg, .pdf" // Specify accepted file types
+                      style={{ display: "none" }}
+                      onChange={handleFileSelect}
+                    />
+                    <label htmlFor="fileInput">
+                      <Text fontSize="lg" cursor="pointer">
+                        {selectedFile
+                          ? `File: ${selectedFile.name}`
+                          : "Drag & Drop or Click to Upload"}
+                      </Text>
+                    </label>
+                  </Box>
 
-              <Text p={"20px 0px"}>Extra Information </Text>
+                  <Text p={"20px 0px"}>Extra Information </Text>
 
-              <Textarea
-                h={"120px"}
-                value={additionalInfo}
-                onChange={handleAdditionalInfoChange}
-                placeholder="Enter additional information..."
-              />
-              
-            <HStack mt={"5%"} justify={"center"}>
-              <Button
-                borderRadius={"10px"}
-                w={"80%"}
-                fontSize={"30px"}
-              
-                p={"30px 30px"}
-                variant="solid"
-                colorScheme="gray"
-                mb={"3%"}
-              >
-                <Checkbox defaultChecked  size='lg' >  <Text  fontSize={"20px"}>
+                  <Textarea
+                    h={"120px"}
+                    value={additionalInfo}
+                    onChange={handleAdditionalInfoChange}
+                    placeholder="Enter additional information..."
+                  />
 
-                Upload For Review
-                  
-                  </Text> </Checkbox>
-              </Button>
-              
+                  <HStack mt={"5%"} justify={"center"}>
+                    <Button
+                      borderRadius={"10px"}
+                      w={"80%"}
+                      fontSize={"30px"}
+                      p={"30px 30px"}
+                      variant="solid"
+                      colorScheme="gray"
+                      mb={"3%"}
+                    >
+                      <Checkbox defaultChecked size="lg">
+                        {" "}
+                        <Text fontSize={"20px"}>Upload For Review</Text>{" "}
+                      </Checkbox>
+                    </Button>
+                  </HStack>
+                </FormControl>
+              </Stack>
             </HStack>
-            </FormControl>
-          </Stack>
-        </HStack>
           </CardBody>
-          </Card>
-
-       
-       
+        </Card>
       </HStack>
     </>
   );

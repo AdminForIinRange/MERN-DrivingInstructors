@@ -60,7 +60,6 @@ import { AddIcon } from "@chakra-ui/icons";
 export default function ServiceSelection() {
   const [customBtn, setCustomBtn] = useState([]);
 
-  
   const handleAddCustomService = () => {
     // Get the value from the input field
     const customService = document.getElementById("customServiceInput").value;
@@ -74,17 +73,13 @@ export default function ServiceSelection() {
     }
   };
 
-
-
   const handleRemoveCustomService = (indexToRemove) => {
     // Filter out the service at the provided index
     const updatedCustomBtn = customBtn.filter(
-      (_, index) => index !== indexToRemove
+      (_, index) => index !== indexToRemove,
     );
     setCustomBtn(updatedCustomBtn);
   };
-
-
 
   const [fromOne, setFormOne] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -112,7 +107,6 @@ export default function ServiceSelection() {
   const handleAdditionalInfoChange = (event) => {
     setAdditionalInfo(event.target.value);
   };
- 
 
   const FrontbuttonData = [
     "Performance Tuning/Racing Services",
@@ -147,9 +141,6 @@ export default function ServiceSelection() {
 
   return (
     <>
-    
-
-     
       <HStack justify={"center"} p={"0 2%"}>
         <Card
           maxW={"900px"}
@@ -219,7 +210,6 @@ export default function ServiceSelection() {
                       <Wrap>
                         {buttonData.map((button, index) => (
                           <Button
-                         
                             key={index}
                             value={button} // Assuming FrontbuttonData holds the value for each button
                             p={{
@@ -318,15 +308,13 @@ export default function ServiceSelection() {
                       borderRadius={"200px"}
                       size="sm"
                       h={"7px"}
-                      borderWidth={"1px"}     
+                      borderWidth={"1px"}
                       colorScheme="red"
                       ml={"10px"}
                     ></Button>
                   </Button>
                 ))}
-
               </FormControl>
-              
             </Stack>
           </CardBody>
         </Card>

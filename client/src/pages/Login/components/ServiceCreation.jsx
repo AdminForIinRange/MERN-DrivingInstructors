@@ -66,13 +66,8 @@ import {
 import { TfiMoney } from "react-icons/tfi";
 import { AddIcon } from "@chakra-ui/icons";
 export default function ServiceCreation() {
-
   return (
     <>
-     
-
-     
-
       <Tabs variant="enclosed">
         <HStack justify={"center"}>
           <TabList>
@@ -83,9 +78,9 @@ export default function ServiceCreation() {
 
         <TabPanels>
           <TabPanel>
-            <HStack justify={"center"} gap={"2%"} align={"start"} wrap={"wrap"} >
+            <HStack justify={"center"} gap={"2%"} align={"start"} wrap={"wrap"}>
               <Card
-              mb={"2%"}
+                mb={"2%"}
                 maxW={"800px"}
                 transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
                 _hover={{
@@ -97,14 +92,14 @@ export default function ServiceCreation() {
                   <Stack padding={"5px 20px"}>
                     <FormControl>
                       <VStack justify={"center"}>
-                        <Heading as="h4" size="lg" >
+                        <Heading as="h4" size="lg">
                           Basic
                         </Heading>
 
                         <Divider />
                       </VStack>
 
-                      <VStack justify={"center"} mt={"10px"}  gap={"10px"}>
+                      <VStack justify={"center"} mt={"10px"} gap={"10px"}>
                         <HStack>
                           <Text>$</Text>
                           <Input
@@ -152,7 +147,7 @@ export default function ServiceCreation() {
                 </CardBody>
               </Card>
               <Card
-               mb={"2%"}
+                mb={"2%"}
                 maxW={"800px"}
                 transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
                 _hover={{
@@ -161,10 +156,10 @@ export default function ServiceCreation() {
                 }}
               >
                 <CardBody>
-                <Stack padding={"5px 20px"}>
+                  <Stack padding={"5px 20px"}>
                     <FormControl>
                       <VStack justify={"center"}>
-                        <Heading as="h4" size="lg" >
+                        <Heading as="h4" size="lg">
                           Standard
                         </Heading>
 
@@ -227,17 +222,17 @@ export default function ServiceCreation() {
                 }}
               >
                 <CardBody>
-                <Stack padding={"5px 20px"}>
+                  <Stack padding={"5px 20px"}>
                     <FormControl>
-                      <VStack justify={"center"} >
-                        <Heading as="h4" size="lg" >
+                      <VStack justify={"center"}>
+                        <Heading as="h4" size="lg">
                           Advanced
                         </Heading>
 
                         <Divider />
                       </VStack>
 
-                      <VStack justify={"center"}  mt={"10px"}  gap={"10px"}>
+                      <VStack justify={"center"} mt={"10px"} gap={"10px"}>
                         <HStack>
                           <Text>$</Text>
                           <Input
@@ -291,7 +286,6 @@ export default function ServiceCreation() {
             <p>two!</p>
           </TabPanel>
         </TabPanels>
-       
       </Tabs>
     </>
   );

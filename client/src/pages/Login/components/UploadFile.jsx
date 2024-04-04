@@ -73,15 +73,9 @@ export default function UploadFile() {
   const handleAdditionalInfoChange = (event) => {
     setAdditionalInfo(event.target.value);
   };
- 
 
   return (
     <>
-    
-
-   
-
-     
       <HStack justify={"center"} p={"0 2%"}>
         <Card
           maxW={"900px"}
@@ -131,7 +125,6 @@ export default function UploadFile() {
             </Stack>
 
             <HStack justify={"center"}>
-             
               <Button
                 borderRadius={"10px"}
                 w={"80%"}
@@ -143,9 +136,9 @@ export default function UploadFile() {
                 mb={"3%"}
                 mt={"7%"}
               >
-               <Checkbox size='lg' colorScheme='blue' defaultChecked>
-    Skip
-  </Checkbox>
+                <Checkbox size="lg" colorScheme="blue" defaultChecked>
+                  Skip
+                </Checkbox>
               </Button>
             </HStack>
           </CardBody>

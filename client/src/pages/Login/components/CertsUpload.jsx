@@ -13,7 +13,6 @@ import {
   CheckboxGroup,
   StepSeparator,
   Textarea,
-  
   StepStatus,
   StepTitle,
   Stepper,
@@ -79,12 +78,9 @@ export default function CertsUpload() {
   const handleAdditionalInfoChange = (event) => {
     setAdditionalInfo(event.target.value);
   };
- 
 
   return (
     <>
-  
-   
       <HStack
         justify={"center"}
         p={"0 5%"}
@@ -104,40 +100,22 @@ export default function CertsUpload() {
           <CardBody>
             <Stack padding={"0 60px"}>
               <FormControl>
-
-              <HStack justify={"center"}>
-                   
-                   <Checkbox defaultChecked size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
-
-Dgree
- 
- </Text> </Checkbox>
- <Checkbox defaultChecked  size='lg' mb={"30px"}>  <Text  fontSize={"20px"}>
-
-Certficate
- 
- </Text> </Checkbox>
-
-                 
-
-
-                
-
-
-
-
-                 </HStack>
+                <HStack justify={"center"}>
+                  <Checkbox defaultChecked size="lg" mb={"30px"}>
+                    {" "}
+                    <Text fontSize={"20px"}>Dgree</Text>{" "}
+                  </Checkbox>
+                  <Checkbox defaultChecked size="lg" mb={"30px"}>
+                    {" "}
+                    <Text fontSize={"20px"}>Certficate</Text>{" "}
+                  </Checkbox>
+                </HStack>
                 <HStack
                   gap={"10%"}
                   justify={"center"}
                   wrap={"nowrap"}
                   whiteSpace={"nowrap"}
                 >
-
-                 
-                  
-                 
-
                   <Input
                     fontSize={"20px"}
                     mb={"50px"}
@@ -148,8 +126,7 @@ Certficate
                     placeholder="Name of School"
                   />
                 </HStack>
-                <Text  >Date of study</Text>
-                
+                <Text>Date of study</Text>
 
                 <HStack
                   gap={"10%"}
@@ -167,7 +144,7 @@ Certficate
                     placeholder="Date of study"
                   />
 
-<Input
+                  <Input
                     fontSize={"20px"}
                     mb={"50px"}
                     borderRadius={"0%"}
@@ -176,14 +153,9 @@ Certficate
                     type="Title of Study"
                     placeholder="Title of Study"
                   />
-               
                 </HStack>
 
-             
-            
-                  <Text  >End of study</Text>
-
-            
+                <Text>End of study</Text>
 
                 <HStack
                   gap={"10%"}
@@ -201,7 +173,7 @@ Certficate
                     placeholder="Date of study"
                   />
 
-<Input
+                  <Input
                     fontSize={"20px"}
                     mb={"50px"}
                     borderRadius={"0%"}
@@ -210,9 +182,8 @@ Certficate
                     type="Field of Study"
                     placeholder="Field of Study"
                   />
-               
                 </HStack>
-                
+
                 <Text mb={"10px"}>Upload Document</Text>
                 <HStack
                   gap={"10%"}
@@ -220,10 +191,6 @@ Certficate
                   wrap={"nowrap"}
                   whiteSpace={"nowrap"}
                 >
-                  
-
-                    
-
                   <Box
                     border="2px dashed #aaa"
                     borderRadius="md"
@@ -231,7 +198,6 @@ Certficate
                     textAlign="center"
                     onDrop={handleFileDrop}
                     onDragOver={handleDragOver}
-                  
                   >
                     <input
                       type="file"
@@ -252,18 +218,22 @@ Certficate
               </FormControl>
             </Stack>
 
-            <HStack  wrap={{
-              base: "wrap",
-              xsm: "wrap",
-              ssm: "wrap",
-              sm: "wrap",
-              md: "wrap",
-              lg: "wrap",
-              xl: "nowrap",
-              xxl: "nowrap",
-              xxxl: "nowrap",
-            }} justify={"center"} gap={"5%"} mt={"5%"}>
-             
+            <HStack
+              wrap={{
+                base: "wrap",
+                xsm: "wrap",
+                ssm: "wrap",
+                sm: "wrap",
+                md: "wrap",
+                lg: "wrap",
+                xl: "nowrap",
+                xxl: "nowrap",
+                xxxl: "nowrap",
+              }}
+              justify={"center"}
+              gap={"5%"}
+              mt={"5%"}
+            >
               <Button
                 borderRadius={"10px"}
                 w={"80%"}
@@ -284,9 +254,9 @@ Certficate
                 colorScheme="gray"
                 mb={"3%"}
               >
-                <Checkbox size='lg' colorScheme='blue' defaultChecked>
-    Skip
-  </Checkbox>
+                <Checkbox size="lg" colorScheme="blue" defaultChecked>
+                  Skip
+                </Checkbox>
               </Button>
             </HStack>
           </CardBody>

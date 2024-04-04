@@ -66,16 +66,14 @@ import {
 import { TfiMoney } from "react-icons/tfi";
 import { AddIcon } from "@chakra-ui/icons";
 export default function StoreCreation() {
-
   const [additionalInfo, setAdditionalInfo] = useState("");
- 
+
   const [selectedFiles, setSelectedFiles] = useState({
     file1: null,
     file2: null,
     file3: null,
     file4: null,
   });
-
 
   const handleAdditionalInfoChange = (event) => {
     setAdditionalInfo(event.target.value);
@@ -98,14 +96,9 @@ export default function StoreCreation() {
   const handleDragOver = (event) => {
     event.preventDefault();
   };
-  
 
   return (
     <>
-     
-
-    
-
       <Tabs variant="enclosed">
         <HStack justify={"center"}>
           <TabList>
@@ -119,153 +112,153 @@ export default function StoreCreation() {
           <TabPanel>
             <HStack justify={"center"} align={"strat"} wrap={"wrap"}>
               <VStack>
-              <Box
-        border="2px dashed #aaa"
-        borderRadius="md"
-        padding="60px"
-        maxH={"300px"}
-        maxW={"300px"}
-        textAlign="center"
-        onDrop={(event) => handleFileDrop(event, 'file1')}
-        onDragOver={handleDragOver}
-      >
-        <input
-          type="file"
-          id="fileInput1"
-          accept=".png, .jpg, .jpeg, .pdf"
-          style={{ display: "none" }}
-          onChange={(event) => handleFileSelect(event, 'file1')}
-        />
+                <Box
+                  border="2px dashed #aaa"
+                  borderRadius="md"
+                  padding="60px"
+                  maxH={"300px"}
+                  maxW={"300px"}
+                  textAlign="center"
+                  onDrop={(event) => handleFileDrop(event, "file1")}
+                  onDragOver={handleDragOver}
+                >
+                  <input
+                    type="file"
+                    id="fileInput1"
+                    accept=".png, .jpg, .jpeg, .pdf"
+                    style={{ display: "none" }}
+                    onChange={(event) => handleFileSelect(event, "file1")}
+                  />
 
-        <label htmlFor="fileInput1">
-          {selectedFiles.file1 ? (
-            <img
-              src={URL.createObjectURL(selectedFiles.file1)}
-              alt="Uploaded File"
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100%",
-                marginBottom: "10px",
-              }}
-            />
-          ) : (
-            <Text fontSize="lg" cursor="pointer">
-              Drag & Drop or Click to Upload Product Images
-            </Text>
-          )}
-        </label>
-      </Box>
-      <Box
-        border="2px dashed #aaa"
-        borderRadius="md"
-        padding="60px"
-        maxH={"300px"}
-        maxW={"300px"}
-        textAlign="center"
-        onDrop={(event) => handleFileDrop(event, 'file2')}
-        onDragOver={handleDragOver}
-      >
-        <input
-          type="file"
-          id="fileInput2"
-          accept=".png, .jpg, .jpeg, .pdf"
-          style={{ display: "none" }}
-          onChange={(event) => handleFileSelect(event, 'file2')}
-        />
+                  <label htmlFor="fileInput1">
+                    {selectedFiles.file1 ? (
+                      <img
+                        src={URL.createObjectURL(selectedFiles.file1)}
+                        alt="Uploaded File"
+                        style={{
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          marginBottom: "10px",
+                        }}
+                      />
+                    ) : (
+                      <Text fontSize="lg" cursor="pointer">
+                        Drag & Drop or Click to Upload Product Images
+                      </Text>
+                    )}
+                  </label>
+                </Box>
+                <Box
+                  border="2px dashed #aaa"
+                  borderRadius="md"
+                  padding="60px"
+                  maxH={"300px"}
+                  maxW={"300px"}
+                  textAlign="center"
+                  onDrop={(event) => handleFileDrop(event, "file2")}
+                  onDragOver={handleDragOver}
+                >
+                  <input
+                    type="file"
+                    id="fileInput2"
+                    accept=".png, .jpg, .jpeg, .pdf"
+                    style={{ display: "none" }}
+                    onChange={(event) => handleFileSelect(event, "file2")}
+                  />
 
-        <label htmlFor="fileInput2">
-          {selectedFiles.file2 ? (
-            <img
-              src={URL.createObjectURL(selectedFiles.file2)}
-              alt="Uploaded File"
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100%",
-                marginBottom: "10px",
-              }}
-            />
-          ) : (
-            <Text fontSize="lg" cursor="pointer">
-              Drag & Drop or Click to Upload Product Images
-            </Text>
-          )}
-        </label>
-      </Box>
+                  <label htmlFor="fileInput2">
+                    {selectedFiles.file2 ? (
+                      <img
+                        src={URL.createObjectURL(selectedFiles.file2)}
+                        alt="Uploaded File"
+                        style={{
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          marginBottom: "10px",
+                        }}
+                      />
+                    ) : (
+                      <Text fontSize="lg" cursor="pointer">
+                        Drag & Drop or Click to Upload Product Images
+                      </Text>
+                    )}
+                  </label>
+                </Box>
               </VStack>
 
               <VStack>
-              <Box
-        border="2px dashed #aaa"
-        borderRadius="md"
-        padding="60px"
-        maxH={"300px"}
-        maxW={"300px"}
-        textAlign="center"
-        onDrop={(event) => handleFileDrop(event, 'file3')}
-        onDragOver={handleDragOver}
-      >
-        <input
-          type="file"
-          id="fileInput3"
-          accept=".png, .jpg, .jpeg, .pdf"
-          style={{ display: "none" }}
-          onChange={(event) => handleFileSelect(event, 'file3')}
-        />
+                <Box
+                  border="2px dashed #aaa"
+                  borderRadius="md"
+                  padding="60px"
+                  maxH={"300px"}
+                  maxW={"300px"}
+                  textAlign="center"
+                  onDrop={(event) => handleFileDrop(event, "file3")}
+                  onDragOver={handleDragOver}
+                >
+                  <input
+                    type="file"
+                    id="fileInput3"
+                    accept=".png, .jpg, .jpeg, .pdf"
+                    style={{ display: "none" }}
+                    onChange={(event) => handleFileSelect(event, "file3")}
+                  />
 
-        <label htmlFor="fileInput3">
-          {selectedFiles.file3 ? (
-            <img
-              src={URL.createObjectURL(selectedFiles.file3)}
-              alt="Uploaded File"
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100%",
-                marginBottom: "10px",
-              }}
-            />
-          ) : (
-            <Text fontSize="lg" cursor="pointer">
-              Drag & Drop or Click to Upload Product Images
-            </Text>
-          )}
-        </label>
-      </Box>
-      <Box
-        border="2px dashed #aaa"
-        borderRadius="md"
-        padding="60px"
-        maxH={"300px"}
-        maxW={"300px"}
-        textAlign="center"
-        onDrop={(event) => handleFileDrop(event, 'file4')}
-        onDragOver={handleDragOver}
-      >
-        <input
-          type="file"
-          id="fileInput4"
-          accept=".png, .jpg, .jpeg, .pdf"
-          style={{ display: "none" }}
-          onChange={(event) => handleFileSelect(event, 'file4')}
-        />
+                  <label htmlFor="fileInput3">
+                    {selectedFiles.file3 ? (
+                      <img
+                        src={URL.createObjectURL(selectedFiles.file3)}
+                        alt="Uploaded File"
+                        style={{
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          marginBottom: "10px",
+                        }}
+                      />
+                    ) : (
+                      <Text fontSize="lg" cursor="pointer">
+                        Drag & Drop or Click to Upload Product Images
+                      </Text>
+                    )}
+                  </label>
+                </Box>
+                <Box
+                  border="2px dashed #aaa"
+                  borderRadius="md"
+                  padding="60px"
+                  maxH={"300px"}
+                  maxW={"300px"}
+                  textAlign="center"
+                  onDrop={(event) => handleFileDrop(event, "file4")}
+                  onDragOver={handleDragOver}
+                >
+                  <input
+                    type="file"
+                    id="fileInput4"
+                    accept=".png, .jpg, .jpeg, .pdf"
+                    style={{ display: "none" }}
+                    onChange={(event) => handleFileSelect(event, "file4")}
+                  />
 
-        <label htmlFor="fileInput4">
-          {selectedFiles.file4 ? (
-            <img
-              src={URL.createObjectURL(selectedFiles.file4)}
-              alt="Uploaded File"
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100%",
-                marginBottom: "10px",
-              }}
-            />
-          ) : (
-            <Text fontSize="lg" cursor="pointer">
-              Drag & Drop or Click to Upload Product Images
-            </Text>
-          )}
-        </label>
-      </Box>
+                  <label htmlFor="fileInput4">
+                    {selectedFiles.file4 ? (
+                      <img
+                        src={URL.createObjectURL(selectedFiles.file4)}
+                        alt="Uploaded File"
+                        style={{
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          marginBottom: "10px",
+                        }}
+                      />
+                    ) : (
+                      <Text fontSize="lg" cursor="pointer">
+                        Drag & Drop or Click to Upload Product Images
+                      </Text>
+                    )}
+                  </label>
+                </Box>
               </VStack>
 
               <VStack>
@@ -306,8 +299,6 @@ export default function StoreCreation() {
                     type="text"
                     placeholder="Small Description"
                   />
-                  
-
                 </HStack>
               </VStack>
             </HStack>

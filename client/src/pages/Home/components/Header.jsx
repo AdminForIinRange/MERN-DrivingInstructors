@@ -19,7 +19,6 @@ export default function Header() {
     setInputValue(e.target.value);
   };
 
-
   const backgroundImageUrls = {
     base: "https://source.unsplash.com/white-boat-on-sea-under-white-sky-during-daytime-TCbNpCEq4W4",
     xsm: "https://source.unsplash.com/white-boat-on-sea-under-white-sky-during-daytime-TCbNpCEq4W4",
@@ -209,20 +208,38 @@ export default function Header() {
                 handleInput(event, setInputValue(event.target.value))
               }
             >
-               {buttonData.map((buttonText, index) => (
-            <Button
-              key={index}
-              value={buttonText}
-              transition="transform, 0.3s ease-in-out"
-              p={{ base: "15px", xsm: "15px", ssm: "15px", sm: "20px", md: "20px", lg: "20px", xl: "20px", xxl: "20px" }}
-              fontSize={{ base: "10px", xsm: "10px", ssm: "10px", sm: "15px", md: "15px", lg: "15px", xl: "15px", xxl: "15px" }}
-              colorScheme="teal"
-              variant="outline"
-              size="sm"
-            >
-              {buttonText}
-            </Button>
-          ))}
+              {buttonData.map((buttonText, index) => (
+                <Button
+                  key={index}
+                  value={buttonText}
+                  transition="transform, 0.3s ease-in-out"
+                  p={{
+                    base: "15px",
+                    xsm: "15px",
+                    ssm: "15px",
+                    sm: "20px",
+                    md: "20px",
+                    lg: "20px",
+                    xl: "20px",
+                    xxl: "20px",
+                  }}
+                  fontSize={{
+                    base: "10px",
+                    xsm: "10px",
+                    ssm: "10px",
+                    sm: "15px",
+                    md: "15px",
+                    lg: "15px",
+                    xl: "15px",
+                    xxl: "15px",
+                  }}
+                  colorScheme="teal"
+                  variant="outline"
+                  size="sm"
+                >
+                  {buttonText}
+                </Button>
+              ))}
             </Wrap>
           </ButtonGroup>
         </HStack>

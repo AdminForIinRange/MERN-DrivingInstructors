@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useBreakpointValue, Grid, GridItem, Card,
-    CardHeader,
-    CardBody,
-    
-     Text, Heading } from "@chakra-ui/react";
+import {
+  useBreakpointValue,
+  Grid,
+  GridItem,
+  Card,
+  CardHeader,
+  CardBody,
+  Text,
+  Heading,
+} from "@chakra-ui/react";
 import "../Home.css";
 
 export default function MiddleContent() {
@@ -65,7 +70,6 @@ export default function MiddleContent() {
     };
   }, []);
 
-
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
@@ -77,9 +81,7 @@ export default function MiddleContent() {
   }, [refreshKey]);
   return (
     <>
-    
-    
-    {!notSmallScreen ? (
+      {!notSmallScreen ? (
         <>
           <Grid
             minH={"1000px"}
@@ -382,8 +384,6 @@ export default function MiddleContent() {
           </Grid>{" "}
         </>
       ) : (
-    
-
         <>
           <Grid
             minH={"1000px"}
@@ -729,6 +729,6 @@ export default function MiddleContent() {
           </Grid>
         </>
       )}
-</>
-  )
+    </>
+  );
 }

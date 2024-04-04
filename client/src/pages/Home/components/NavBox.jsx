@@ -1,134 +1,119 @@
 import {
-    Flex,
-    Button,
-    Box,
-    useBreakpointValue,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    Wrap,
-    Grid,
-    GridItem,
-    Text,
-    AbsoluteCenter,
-    Image,
-    Stack,
-    InputLeftElement,
-    InputLeftAddon,
-    Input,
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-    MenuItemOption,
-    MenuOptionGroup,
-    HStack,
-    Heading,
-    InputGroup,
-    Avatar,
-    Select,
-    Container,
-    Divider,
-    Card,
-    CardHeader,
-    CardBody,
-    Highlight,
-    CardFooter,
-    AspectRatio,
-    ButtonGroup,
-    Center,
-  } from "@chakra-ui/react";
-  import { NavLink } from "react-router-dom";
-  import { PureComponent } from "react";
+  Flex,
+  Button,
+  Box,
+  useBreakpointValue,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Wrap,
+  Grid,
+  GridItem,
+  Text,
+  AbsoluteCenter,
+  Image,
+  Stack,
+  InputLeftElement,
+  InputLeftAddon,
+  Input,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  MenuItemOption,
+  MenuOptionGroup,
+  HStack,
+  Heading,
+  InputGroup,
+  Avatar,
+  Select,
+  Container,
+  Divider,
+  Card,
+  CardHeader,
+  CardBody,
+  Highlight,
+  CardFooter,
+  AspectRatio,
+  ButtonGroup,
+  Center,
+} from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
+import { PureComponent } from "react";
 
-  import "../Home.css";
-  import {
-    PhoneIcon,
-    Search2Icon,
-    ChevronDownIcon,
-    UpDownIcon,
-    ChatIcon,
-    CheckIcon,
-  } from "@chakra-ui/icons";
-  
-  import {
-    FaShare,
-    FaCheck,
-    FaComment,
-    FaInstagram,
-    FaYoutube,
-    FaLinkedin,
-  } from "react-icons/fa";
+import "../Home.css";
+import {
+  PhoneIcon,
+  Search2Icon,
+  ChevronDownIcon,
+  UpDownIcon,
+  ChatIcon,
+  CheckIcon,
+} from "@chakra-ui/icons";
 
-  import Car3d from "../../../assets/Images/3d car.png";
-  import Workplace3D from "../../../assets/Images/3d workplace.png";
-  import Office3d from "../../../assets/Images/Office 3d.png";
-  
+import {
+  FaShare,
+  FaCheck,
+  FaComment,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+} from "react-icons/fa";
+
+import Car3d from "../../../assets/Images/3d car.png";
+import Workplace3D from "../../../assets/Images/3d workplace.png";
+import Office3d from "../../../assets/Images/Office 3d.png";
 
 export default function NavBox() {
+  const LocalWidth = {
+    base: "300px",
+    xsm: "350px",
+    ssm: "500px",
+    sm: "600px",
+    md: "600px",
+    lg: "800px",
+    xl: "350px",
+    xxl: "400px",
+    xxxl: "400px",
+  };
 
+  const LocalHeight = {
+    base: "150px",
+    xsm: "150px",
+    ssm: "150px",
+    sm: "130px",
+    md: "130px",
+    lg: "130px",
+    xl: "300px",
+    xxl: "300px",
+    xxxl: "300px",
+  };
 
-    const LocalWidth = {
-
-        base: "300px",
-        xsm: "350px",
-        ssm: "500px",
-        sm: "600px",
-        md: "600px",
-        lg: "800px",
-        xl: "350px",
-        xxl: "400px",
-        xxxl: "400px",
-        
-
-        
-
-    }
-
-    const LocalHeight = {
-        base: "150px",
-        xsm: "150px",
-        ssm: "150px",
-        sm: "130px",
-        md: "130px",
-        lg: "130px",
-        xl: "300px",
-        xxl: "300px",
-        xxxl: "300px",
-      }
-
-
-      const LoaclColumn = {
-        base: "9/10",
-        xsm: "9/10",
-        ssm: "9/10",
-        sm: "9/10",
-        md: "9/10",
-        lg: "9/10",
-        xl: "5/10",
-        xxl: "6/10",
-
-      }
-      const LoaclRow = {
-        base: "8/10",
-        xsm: "8/10",
-        ssm: "8/10",
-        sm: "2/10",
-        md: "2/10",
-        lg: "2/10",
-        xl: "9/10  ",
-        xxl: "9/10",
-
-      }
-      
-
-
+  const LoaclColumn = {
+    base: "9/10",
+    xsm: "9/10",
+    ssm: "9/10",
+    sm: "9/10",
+    md: "9/10",
+    lg: "9/10",
+    xl: "5/10",
+    xxl: "6/10",
+  };
+  const LoaclRow = {
+    base: "8/10",
+    xsm: "8/10",
+    ssm: "8/10",
+    sm: "2/10",
+    md: "2/10",
+    lg: "2/10",
+    xl: "9/10  ",
+    xxl: "9/10",
+  };
 
   return (
     <>
-    
-    <HStack
+      <HStack
         wrap={{
           base: "wrap",
           xsm: "wrap",
@@ -209,10 +194,7 @@ export default function NavBox() {
               templateRows={"repeat(10, 1fr) "}
               gridTemplate={"repeat(10, 1fr)"}
             >
-              <GridItem
-                gridColumn={LoaclColumn}
-                gridRow={LoaclRow}
-              >
+              <GridItem gridColumn={LoaclColumn} gridRow={LoaclRow}>
                 <Text
                   fontWeight={"bold"}
                   transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
@@ -269,10 +251,7 @@ export default function NavBox() {
               templateRows={"repeat(10, 1fr) "}
               gridTemplate={"repeat(10, 1fr)"}
             >
-              <GridItem
-                gridColumn={LoaclColumn}
-                gridRow={LoaclRow}
-              >
+              <GridItem gridColumn={LoaclColumn} gridRow={LoaclRow}>
                 <Text
                   fontWeight={"bold"}
                   transition="transform, 0.3s ease-in-out, boxShadow 1s ease-in-out"
@@ -329,10 +308,7 @@ export default function NavBox() {
               templateRows={"repeat(10, 1fr) "}
               gridTemplate={"repeat(10, 1fr)"}
             >
-              <GridItem
-                gridColumn={LoaclColumn}
-                gridRow={LoaclRow}
-              >
+              <GridItem gridColumn={LoaclColumn} gridRow={LoaclRow}>
                 <Text
                   color={"black"}
                   fontWeight={"bold"}
@@ -345,6 +321,7 @@ export default function NavBox() {
             </Grid>
           </Box>
         </span>
-      </HStack></>
-  )
+      </HStack>
+    </>
+  );
 }
