@@ -1,11 +1,18 @@
 # Driving + Fiver combination project
 
 ## Description:
-This s a full-stack MERN (MongoDB, Express.js, React.js, Node.js) project designed to assist automotive specialists in finding freelance work both locally and online. However, it currently serves as a landing page only, showcasing the project's concept and features.
+
+Developed a Driving + Fiver combination project. It is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) project 
+designed to assist automotive specialists in finding freelance work both locally and online. This project marked my solo 
+introduction to the MERN stack, and I found it immensely enjoyable. 
+
+
 ![image](https://github.com/AdminForIinRange/MERN-DrivingInstructors/assets/91888685/5cf0500f-aa40-4ad0-814a-2f6c9d83c2c6)
 ![image](https://github.com/AdminForIinRange/MERN-DrivingInstructors/assets/91888685/7326422f-e74a-4316-8141-a959734d7174)
 ![image](https://github.com/AdminForIinRange/MERN-DrivingInstructors/assets/91888685/f33bd775-c73f-4ed1-83a9-dba30741e37d)
 ![image](https://github.com/AdminForIinRange/MERN-DrivingInstructors/assets/91888685/3772d3fc-03dd-4625-9311-d786b60af5a1)
+
+
 
 ## Installation:
 1. Clone the repository.
